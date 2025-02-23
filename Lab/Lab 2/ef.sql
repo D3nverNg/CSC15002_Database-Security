@@ -1,0 +1,67 @@
+﻿USE QLBongDa;
+GO
+
+-- e
+IF OBJECT_ID('SP_SEL_NO_ENCRYPT', 'P') IS NOT NULL
+BEGIN
+    EXEC('DROP PROCEDURE SP_SEL_NO_ENCRYPT');
+END;
+GO
+
+CREATE PROCEDURE SP_SEL_NO_ENCRYPT
+    @TenCLB NVARCHAR(50),
+    @TenQG NVARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        MACT,
+        HoTen,
+        NgaySinh,
+        DiaChi,
+        ViTri
+    FROM 
+    dbo.CAUTHU
+	join dbo.CAULACBO on CAUTHU.MACLB = CAULACBO.MACLB
+	join dbo.QUOCGIA on CAUTHU.MAQG = QUOCGIA.MAQG
+    WHERE 
+     CAULACBO.TENCLB = @TenCLB
+    AND QUOCGIA.TENQG = @TenQG;
+END;
+GO
+
+--f 
+IF OBJECT_ID('SP_SEL_ENCRYPT', 'P') IS NOT NULL
+BEGIN
+    EXEC('DROP PROCEDURE SP_SEL_ENCRYPT');
+END;
+GO
+
+CREATE PROCEDURE SP_SEL_ENCRYPT
+    @TenCLB NVARCHAR(50),
+    @TenQG NVARCHAR(50)
+	WITH ENCRYPTION
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        MACT,
+        HoTen,
+        NgaySinh,
+        DiaChi,
+        ViTri
+    FROM 
+    dbo.CAUTHU
+	join dbo.CAULACBO on CAUTHU.MACLB = CAULACBO.MACLB
+	join dbo.QUOCGIA on CAUTHU.MAQG = QUOCGIA.MAQG
+    WHERE 
+     CAULACBO.TENCLB = @TenCLB
+    AND QUOCGIA.TENQG = @TenQG;
+END;
+GO
+
+	-- test
+EXEC SP_SEL_ENCRYPT @TenCLB = N'SHB Đà Nẵng', @TenQG = N'Brazil';
+GO
