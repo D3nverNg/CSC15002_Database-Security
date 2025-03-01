@@ -50,9 +50,9 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "dependencies": {
-            "System.Data.SqlClient": {
+            "Microsoft.Data.SqlClient": {
               "target": "Package",
-              "version": "[4.9.0, )"
+              "version": "[6.0.1, )"
             }
           },
           "imports": [

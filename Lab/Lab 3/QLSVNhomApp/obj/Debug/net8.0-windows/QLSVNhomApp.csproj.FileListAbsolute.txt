@@ -25,3 +25,9 @@ C:\Users\ADMIN\CODE\CSC15002_Database-Security\Lab\Lab 3\QLSVNhomApp\obj\Debug\n
 C:\Users\ADMIN\CODE\CSC15002_Database-Security\Lab\Lab 3\QLSVNhomApp\obj\Debug\net8.0-windows\QLSVNhomApp.pdb
 C:\Users\ADMIN\CODE\CSC15002_Database-Security\Lab\Lab 3\QLSVNhomApp\obj\Debug\net8.0-windows\QLSVNhomApp.genruntimeconfig.cache
 C:\Users\ADMIN\CODE\CSC15002_Database-Security\Lab\Lab 3\QLSVNhomApp\obj\Debug\net8.0-windows\ref\QLSVNhomApp.dll
+C:\Users\ADMIN\CODE\CSC15002_Database-Security\Lab\Lab 3\QLSVNhomApp\obj\Debug\net8.0-windows\QLSVNhomApp.Forms.AddStudentForm.resources
+C:\Users\ADMIN\CODE\CSC15002_Database-Security\Lab\Lab 3\QLSVNhomApp\obj\Debug\net8.0-windows\QLSVNhomApp.Forms.ClassDetailForm.resources
+C:\Users\ADMIN\CODE\CSC15002_Database-Security\Lab\Lab 3\QLSVNhomApp\obj\Debug\net8.0-windows\QLSVNhomApp.Forms.ClassManagementForm.resources
+C:\Users\ADMIN\CODE\CSC15002_Database-Security\Lab\Lab 3\QLSVNhomApp\obj\Debug\net8.0-windows\QLSVNhomApp.Forms.DeleteStudentForm.resources
+C:\Users\ADMIN\CODE\CSC15002_Database-Security\Lab\Lab 3\QLSVNhomApp\obj\Debug\net8.0-windows\QLSVNhomApp.Forms.InputScoreForm.resources
+C:\Users\ADMIN\CODE\CSC15002_Database-Security\Lab\Lab 3\QLSVNhomApp\obj\Debug\net8.0-windows\QLSVNhomApp.Forms.UpdateStudentForm.resources

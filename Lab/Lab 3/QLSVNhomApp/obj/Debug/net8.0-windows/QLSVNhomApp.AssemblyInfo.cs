@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QLSVNhomApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ed7dace9028d458225b3b174bbceb6c63b7df04")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e836e9e7e6ddfcd3c19e0b66ffb5400fe35c553c")]
 [assembly: System.Reflection.AssemblyProductAttribute("QLSVNhomApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QLSVNhomApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
