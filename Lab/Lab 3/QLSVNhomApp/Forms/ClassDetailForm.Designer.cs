@@ -96,14 +96,14 @@ namespace QLSVNhomApp.Forms
             // 
             // btnInputScore
             // 
-            btnInputScore.Font = new Font("Segoe UI", 10F);
-            btnInputScore.Location = new Point(640, 430);
-            btnInputScore.Name = "btnInputScore";
-            btnInputScore.Size = new Size(140, 40);
-            btnInputScore.TabIndex = 5;
-            btnInputScore.Text = "Nhập điểm";
-            btnInputScore.UseVisualStyleBackColor = true;
-            btnInputScore.Click += BtnInputScore_Click;
+            //btnInputScore.Font = new Font("Segoe UI", 10F);
+            //btnInputScore.Location = new Point(640, 430);
+            //btnInputScore.Name = "btnInputScore";
+            //btnInputScore.Size = new Size(140, 40);
+            //btnInputScore.TabIndex = 5;
+            //btnInputScore.Text = "Nhập điểm";
+            //btnInputScore.UseVisualStyleBackColor = true;
+            //btnInputScore.Click += BtnInputScore_Click;
             // 
             // ClassDetailForm
             // 

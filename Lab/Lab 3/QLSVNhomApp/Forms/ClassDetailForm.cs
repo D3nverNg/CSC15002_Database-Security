@@ -79,10 +79,10 @@ namespace QLSVNhomApp.Forms
         }
 
         // Nút "Nhập điểm"
-        private void BtnInputScore_Click(object sender, EventArgs e)
-        {
-            InputScoreForm frm = new InputScoreForm(connectionString, classId);
-            frm.ShowDialog();
-        }
+        //private void BtnInputScore_Click(object sender, EventArgs e)
+        //{
+        //    InputScoreForm frm = new InputScoreForm(connectionString, classId);
+        //    frm.ShowDialog();
+        //}
     }
 }
