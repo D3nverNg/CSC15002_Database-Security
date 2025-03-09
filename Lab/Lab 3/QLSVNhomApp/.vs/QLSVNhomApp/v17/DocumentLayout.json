@@ -1,29 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ADMIN\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\",
+  "WorkspaceRootPath": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\admin\\code\\csc15002_database-security\\lab\\lab 3\\qlsvnhomapp\\forms\\classmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\p14s\\code\\csc15002_database-security\\lab\\lab 3\\qlsvnhomapp\\forms\\classmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|solutionrelative:forms\\classmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\admin\\code\\csc15002_database-security\\lab\\lab 3\\qlsvnhomapp\\forms\\classmanagementform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\p14s\\code\\csc15002_database-security\\lab\\lab 3\\qlsvnhomapp\\forms\\classmanagementform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|solutionrelative:forms\\classmanagementform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\admin\\code\\csc15002_database-security\\lab\\lab 3\\qlsvnhomapp\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|solutionrelative:forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\admin\\code\\csc15002_database-security\\lab\\lab 3\\qlsvnhomapp\\forms\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\p14s\\code\\csc15002_database-security\\lab\\lab 3\\qlsvnhomapp\\forms\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|solutionrelative:forms\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\admin\\code\\csc15002_database-security\\lab\\lab 3\\qlsvnhomapp\\forms\\addstudentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\forms\\addstudentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|solutionrelative:forms\\addstudentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\admin\\code\\csc15002_database-security\\lab\\lab 3\\qlsvnhomapp\\qlsvnhomapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\p14s\\code\\csc15002_database-security\\lab\\lab 3\\qlsvnhomapp\\qlsvnhomapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|solutionrelative:qlsvnhomapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
@@ -40,9 +40,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ClassManagementForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\ClassManagementForm.cs",
+              "DocumentMoniker": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\ClassManagementForm.cs",
               "RelativeDocumentMoniker": "Forms\\ClassManagementForm.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\ClassManagementForm.cs [Design]",
+              "ToolTip": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\ClassManagementForm.cs [Design]",
               "RelativeToolTip": "Forms\\ClassManagementForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-01T18:46:20.894Z",
@@ -52,9 +52,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "ClassManagementForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\ClassManagementForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\ClassManagementForm.Designer.cs",
               "RelativeDocumentMoniker": "Forms\\ClassManagementForm.Designer.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\ClassManagementForm.Designer.cs",
+              "ToolTip": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\ClassManagementForm.Designer.cs",
               "RelativeToolTip": "Forms\\ClassManagementForm.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -63,53 +63,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LoginForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\LoginForm.cs",
-              "RelativeDocumentMoniker": "Forms\\LoginForm.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\LoginForm.cs [Design]",
-              "RelativeToolTip": "Forms\\LoginForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T18:46:05.373Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "LoginForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\LoginForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\LoginForm.Designer.cs",
               "RelativeDocumentMoniker": "Forms\\LoginForm.Designer.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\LoginForm.Designer.cs",
+              "ToolTip": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\LoginForm.Designer.cs",
               "RelativeToolTip": "Forms\\LoginForm.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T18:46:03.72Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T18:46:03.72Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "QLSVNhomApp.csproj",
+              "DocumentMoniker": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\QLSVNhomApp.csproj",
+              "RelativeDocumentMoniker": "QLSVNhomApp.csproj",
+              "ToolTip": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\QLSVNhomApp.csproj",
+              "RelativeToolTip": "QLSVNhomApp.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-01T18:45:30.998Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\LoginForm.cs",
+              "RelativeDocumentMoniker": "Forms\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\LoginForm.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\ADMIN\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\LoginForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-01T18:46:05.373Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "AddStudentForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\AddStudentForm.cs",
+              "DocumentMoniker": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\AddStudentForm.cs",
               "RelativeDocumentMoniker": "Forms\\AddStudentForm.cs",
               "ToolTip": "C:\\Users\\ADMIN\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\AddStudentForm.cs [Design]",
-              "RelativeToolTip": "Forms\\AddStudentForm.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\ADMIN\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\AddStudentForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T18:45:51.662Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "QLSVNhomApp",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\QLSVNhomApp.csproj",
-              "RelativeDocumentMoniker": "QLSVNhomApp.csproj",
-              "ToolTip": "C:\\Users\\ADMIN\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\QLSVNhomApp.csproj",
-              "RelativeToolTip": "QLSVNhomApp.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-01T18:45:30.998Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T18:45:51.662Z"
             }
           ]
         }

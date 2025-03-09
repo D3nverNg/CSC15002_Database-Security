@@ -21,11 +21,11 @@ GO
 
 -- Tạo bảng SINHVIEN
 CREATE TABLE SINHVIEN (
-    MASV VARCHAR(20) PRIMARY KEY,
+    MASV VARCHAR(20) PRIMARY KEY, -- Đã thay đổi kiểu dữ liệu cho phù hơp
     HOTEN NVARCHAR(100) NOT NULL,
     NGAYSINH DATETIME,
     DIACHI NVARCHAR(200),
-    MALOP VARCHAR(20),
+    MALOP VARCHAR(20), -- Đã thay đổi kiểu dữ liệu cho phù hơp
     TENDN NVARCHAR(100) NOT NULL UNIQUE,
     MATKHAU VARBINARY(MAX) NOT NULL  -- Lưu giá trị mật khẩu sau khi mã hóa
 );
@@ -45,7 +45,7 @@ CREATE TABLE NHANVIEN (
 CREATE TABLE LOP (
     MALOP VARCHAR(20) PRIMARY KEY,
     TENLOP NVARCHAR(100) NOT NULL,
-    MANV VARCHAR(20)  -- Mã nhân viên chủ nhiệm (có thể dùng làm FK nếu cần)
+    MANV VARCHAR(20)  -- Mã nhân viên chủ nhiệm
 );
 
 -- Tạo bảng HOCPHAN
