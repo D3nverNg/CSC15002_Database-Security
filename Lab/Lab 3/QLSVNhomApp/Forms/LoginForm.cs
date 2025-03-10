@@ -29,12 +29,13 @@ namespace QLSVNhomApp.Forms
                     SqlDataReader reader = cmd.ExecuteReader();
                     if (reader.Read())
                     {
+                        string employeeId = reader["MANV"].ToString();
                         // Lưu thông tin đăng nhập (ví dụ: MANV và HOTEN)
                         ClassManagementForm.LoggedInEmployeeID = reader["MANV"].ToString();
                         ClassManagementForm.LoggedInUserName = reader["HOTEN"].ToString();
 
                         // Mở giao diện quản lý lớp học
-                        ClassManagementForm cmf = new ClassManagementForm(DatabaseHelper.ConnectionString);
+                        ClassManagementForm cmf = new ClassManagementForm(DatabaseHelper.ConnectionString, employeeId);
                         this.Hide();
                         cmf.Show();
                     }

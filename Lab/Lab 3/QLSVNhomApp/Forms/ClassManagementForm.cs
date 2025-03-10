@@ -14,10 +14,11 @@ namespace QLSVNhomApp.Forms
 
         private string connectionString;
         private string searchPlaceholder = "Tìm kiếm lớp học theo mã lớp hoặc tên lớp";
-
-        public ClassManagementForm(string connStr)
+        private string loggedInEmployeeId;
+        public ClassManagementForm(string connStr, string employeeId)
         {
             connectionString = connStr;
+            this.loggedInEmployeeId = employeeId;
             InitializeComponent();
             lblGreeting.Text = "Xin chào " + LoggedInUserName;
             AdjustDataGridViewSize();
@@ -142,8 +143,11 @@ namespace QLSVNhomApp.Forms
         {
             if (e.RowIndex >= 0 && dgvClasses.Columns[e.ColumnIndex].Name == "colDetail")
             {
+                // Lấy mã lớp từ cột tương ứng
                 string classId = dgvClasses.Rows[e.RowIndex].Cells["colMaLop"].Value.ToString();
-                ClassDetailForm detailForm = new ClassDetailForm(connectionString, classId);
+
+                // Mở form ClassDetailForm với đầy đủ 3 tham số
+                ClassDetailForm detailForm = new ClassDetailForm(connectionString, classId, loggedInEmployeeId);
                 detailForm.ShowDialog();
             }
         }

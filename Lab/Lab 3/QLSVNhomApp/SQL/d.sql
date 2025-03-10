@@ -8,20 +8,25 @@ IF OBJECT_ID('SP_INS_DIEM', 'P') IS NOT NULL
 GO
 
 -- Stored procedure SP_INS_DIEM: Cập nhật điểm thi cho sinh viên, 
--- mã hóa điểm sử dụng hàm dbo.EncryptRSA512 và khóa bí mật là Public Key của nhân viên.
+-- mã hóa điểm sử dụng asymetric key và khóa bí mật là Public Key của nhân viên.
 CREATE PROCEDURE SP_INS_DIEM
     @MASV VARCHAR(20),
     @MAHP VARCHAR(20),
-    @DIEM FLOAT,
-    @PUBKEY VARCHAR(20)
+    @DIEMTHI DECIMAL(4,2),
+    @PUBKEY VARCHAR(20),
+    @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN
-    SET NOCOUNT ON;
-    UPDATE BANGDIEM
-    SET DIEMTHI = dbo.EncryptRSA512(CAST(@DIEM AS VARCHAR(10)), @PUBKEY)
-    WHERE MASV = @MASV AND MAHP = @MAHP;
-END
-GO
+    BEGIN TRY
+        UPDATE BANGDIEM
+        SET DIEMTHI = EncryptByKey(Key_GUID(@PUBKEY), CAST(@DIEMTHI AS VARBINARY))
+        WHERE MASV = @MASV AND MAHP = @MAHP;
+        SET @ErrorMessage = '';
+    END TRY
+    BEGIN CATCH
+        SET @ErrorMessage = ERROR_MESSAGE();
+    END CATCH
+END;
 
 -- Xóa procedure nếu tồn tại trước khi tạo mới
 IF OBJECT_ID('SP_GET_CLASSES', 'P') IS NOT NULL

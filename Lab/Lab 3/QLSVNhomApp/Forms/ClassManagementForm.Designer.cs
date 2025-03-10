@@ -85,7 +85,7 @@ namespace QLSVNhomApp.Forms
             txtSearch.ForeColor = Color.Gray;
             txtSearch.Location = new Point(10, 5);
             txtSearch.Size = new Size(400, 30);
-            txtSearch.Text = "Tìm kiếm lớp học theo mã lớp hoặc tên lớp";
+            txtSearch.Text = "Tìm kiếm lớp học theo mã lớp";
 
             btnSearch.Font = new Font("Segoe UI", 10F);
             btnSearch.Location = new Point(420, 5);

@@ -33,10 +33,10 @@ WHILE @i <= 100
 BEGIN
     INSERT INTO SINHVIEN (MASV, HOTEN, NGAYSINH, DIACHI, MALOP, TENDN, MATKHAU)
     VALUES (
-        'SV' + RIGHT('000' + CAST(@i AS VARCHAR(3)), 3),                       -- MASV: SV001, SV002, ...
-        'Sinh Viên ' + CAST(@i AS VARCHAR(10)),                                  -- HOTEN
+        N'SV' + RIGHT('000' + CAST(@i AS VARCHAR(3)), 3),                       -- MASV: SV001, SV002, ...
+        N'Sinh Viên ' + CAST(@i AS VARCHAR(10)),                                  -- HOTEN
         DATEADD(year, -20, GETDATE()),                                           -- NGAYSINH: giả sử sinh 20 tuổi
-        'Địa chỉ ' + CAST(@i AS VARCHAR(10)),                                    -- DIACHI
+        N'Địa chỉ ' + CAST(@i AS VARCHAR(10)),                                    -- DIACHI
         CASE 
             WHEN @i % 4 = 1 THEN 'L1'
             WHEN @i % 4 = 2 THEN 'L2'
