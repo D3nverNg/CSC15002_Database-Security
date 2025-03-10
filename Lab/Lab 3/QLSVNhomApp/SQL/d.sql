@@ -2,8 +2,13 @@
 USE QLSVNhom;
 GO
 
--- Stored procedure SP_INS_DIEM: C?p nh?t ?i?m thi cho sinh viên, 
--- mã hóa ?i?m s? d?ng hàm dbo.EncryptRSA512 và khóa bí m?t là Public Key c?a nhân viên.
+-- Xóa procedure nếu tồn tại trước khi tạo mới
+IF OBJECT_ID('SP_INS_DIEM', 'P') IS NOT NULL
+    DROP PROCEDURE SP_INS_DIEM;
+GO
+
+-- Stored procedure SP_INS_DIEM: Cập nhật điểm thi cho sinh viên, 
+-- mã hóa điểm sử dụng hàm dbo.EncryptRSA512 và khóa bí mật là Public Key của nhân viên.
 CREATE PROCEDURE SP_INS_DIEM
     @MASV VARCHAR(20),
     @MAHP VARCHAR(20),
@@ -18,29 +23,39 @@ BEGIN
 END
 GO
 
--- Quản lý lớp học
-CREATE PROCEDURE SP_GET_CLASSES_BY_EMPLOYEE
-    @MANV VARCHAR(20)
+-- Xóa procedure nếu tồn tại trước khi tạo mới
+IF OBJECT_ID('SP_GET_CLASSES', 'P') IS NOT NULL
+    DROP PROCEDURE SP_GET_CLASSES;
+GO
+
+CREATE PROCEDURE SP_GET_CLASSES
 AS
 BEGIN
-    SET NOCOUNT ON;
-    SELECT MALOP, TENLOP, MANV FROM LOP WHERE MANV = @MANV;
+    SELECT MALOP, TENLOP, MANV
+    FROM LOP;
 END
 GO
 
+-- Xóa procedure nếu tồn tại trước khi tạo mới
+IF OBJECT_ID('SP_SEARCH_CLASSES', 'P') IS NOT NULL
+    DROP PROCEDURE SP_SEARCH_CLASSES;
+GO
 
-CREATE PROCEDURE SP_SEARCH_CLASSES_BY_EMPLOYEE
-    @MANV VARCHAR(20),
-    @TENLOP NVARCHAR(100)
+CREATE PROCEDURE SP_SEARCH_CLASSES
+    @MALOP NVARCHAR(100)
 AS
 BEGIN
     SET NOCOUNT ON;
     SELECT MALOP, TENLOP, MANV FROM LOP 
-    WHERE MANV = @MANV OR TENLOP = @TENLOP;
+    WHERE MALOP = @MALOP;
 END
 GO
 
--- CLASS DETAIL FORM
+-- Xóa procedure nếu tồn tại trước khi tạo mới
+IF OBJECT_ID('SP_GET_STUDENTS_BY_CLASS', 'P') IS NOT NULL
+    DROP PROCEDURE SP_GET_STUDENTS_BY_CLASS;
+GO
+
 CREATE PROCEDURE SP_GET_STUDENTS_BY_CLASS
     @MALOP NVARCHAR(20)
 AS
@@ -52,9 +67,11 @@ BEGIN
 END
 GO
 
+-- Xóa procedure nếu tồn tại trước khi tạo mới
+IF OBJECT_ID('SP_FIND_STUDENT_IN_CLASS', 'P') IS NOT NULL
+    DROP PROCEDURE SP_FIND_STUDENT_IN_CLASS;
+GO
 
--- UPDATE STUDENT FORM
--- Procedure kiểm tra sinh viên có tồn tại trong lớp hay không
 CREATE PROCEDURE SP_FIND_STUDENT_IN_CLASS
     @MASV NVARCHAR(20),
     @MALOP NVARCHAR(20)
@@ -67,8 +84,11 @@ BEGIN
 END
 GO
 
--- Procedure cập nhật thông tin sinh viên
--- Nếu @NEW_MALOP khác @OLD_MALOP, procedure sẽ thực hiện chuyển lớp (với kiểm tra tồn tại lớp mới)
+-- Xóa procedure nếu tồn tại trước khi tạo mới
+IF OBJECT_ID('SP_UPDATE_STUDENT_INFO', 'P') IS NOT NULL
+    DROP PROCEDURE SP_UPDATE_STUDENT_INFO;
+GO
+
 CREATE PROCEDURE SP_UPDATE_STUDENT_INFO
     @MASV NVARCHAR(20),
     @HOTEN NVARCHAR(100),
@@ -80,14 +100,12 @@ CREATE PROCEDURE SP_UPDATE_STUDENT_INFO
 AS
 BEGIN
     SET NOCOUNT ON;
-    -- Kiểm tra xem sinh viên có tồn tại trong lớp cũ không
     IF NOT EXISTS(SELECT 1 FROM SINHVIEN WHERE MASV = @MASV AND MALOP = @OLD_MALOP)
     BEGIN
         SET @ErrorMessage = 'Sinh viên không tồn tại trong lớp hiện tại.';
         RETURN;
     END
 
-    -- Nếu mã lớp mới khác mã lớp cũ, kiểm tra xem lớp mới có tồn tại không
     IF @NEW_MALOP <> @OLD_MALOP
     BEGIN
         IF NOT EXISTS(SELECT 1 FROM LOP WHERE MALOP = @NEW_MALOP)
@@ -97,7 +115,6 @@ BEGIN
         END
     END
 
-    -- Cập nhật thông tin sinh viên (bao gồm cả thay đổi mã lớp nếu có)
     UPDATE SINHVIEN
     SET HOTEN = @HOTEN,
         NGAYSINH = @NGAYSINH,
@@ -109,9 +126,11 @@ BEGIN
 END
 GO
 
+-- Xóa procedure nếu tồn tại trước khi tạo mới
+IF OBJECT_ID('SP_GENERATE_NEW_STUDENT_ID', 'P') IS NOT NULL
+    DROP PROCEDURE SP_GENERATE_NEW_STUDENT_ID;
+GO
 
--- ADD STUDENT FORM
--- Tạo stored procedure để tạo mã sinh viên mới
 CREATE PROCEDURE SP_GENERATE_NEW_STUDENT_ID
 AS
 BEGIN
@@ -126,47 +145,11 @@ BEGIN
 END
 GO
 
--- Tạo stored procedure để thêm sinh viên mới
-CREATE PROCEDURE SP_INSERT_STUDENT
-    @HOTEN NVARCHAR(100),
-    @NGAYSINH DATETIME,
-    @DIACHI NVARCHAR(200),
-    @TENDN NVARCHAR(100),
-    @MATKHAU NVARCHAR(50),
-    @MASV NVARCHAR(20) OUTPUT,
-    @ErrorMessage NVARCHAR(200) OUTPUT
-AS
-BEGIN
-    SET NOCOUNT ON;
-
-    -- Kiểm tra tên đăng nhập duy nhất
-    IF EXISTS (SELECT 1 FROM SINHVIEN WHERE TENDN = @TENDN)
-    BEGIN
-        SET @ErrorMessage = 'Tên đăng nhập đã tồn tại.';
-        RETURN;
-    END
-
-    -- Sinh mã sinh viên mới
-    DECLARE @NewID INT;
-    DECLARE @MaxID NVARCHAR(20);
-    SELECT @MaxID = MAX(MASV) FROM SINHVIEN;
-    IF @MaxID IS NULL
-        SET @NewID = 1;
-    ELSE
-        SET @NewID = CAST(SUBSTRING(@MaxID, 2, LEN(@MaxID)) AS INT) + 1;
-    SET @MASV = 'S' + RIGHT('000' + CAST(@NewID AS NVARCHAR(10)), 3);
-
-    -- Kiểm tra thông tin bắt buộc (nếu cần thêm các kiểm tra khác tại đây)
-
-    INSERT INTO SINHVIEN (MASV, HOTEN, NGAYSINH, DIACHI, TENDN, MATKHAU)
-    VALUES (@MASV, @HOTEN, @NGAYSINH, @DIACHI, @TENDN, @MATKHAU);
-
-    SET @ErrorMessage = '';
-END
+-- Xóa procedure nếu tồn tại trước khi tạo mới
+IF OBJECT_ID('SP_DELETE_STUDENT', 'P') IS NOT NULL
+    DROP PROCEDURE SP_DELETE_STUDENT;
 GO
 
-
---DELETE STUDENT FORM
 CREATE PROCEDURE SP_DELETE_STUDENT
     @MASV NVARCHAR(20),
     @MALOP NVARCHAR(20),

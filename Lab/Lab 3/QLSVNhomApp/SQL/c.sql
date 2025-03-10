@@ -75,8 +75,10 @@ BEGIN
 END
 GO
 
-EXEC SP_INS_PUBLIC_NHANVIEN 'NV10', N'NGUYEN VAN BD', 'nvbd@yahoo.com', 300000, N'NVBD', '123456'
-
+EXEC SP_INS_PUBLIC_NHANVIEN 'NV01', N'NGUYỄN VĂN A', 'nva@company.com', 1500000, N'nva', '123456';
+EXEC SP_INS_PUBLIC_NHANVIEN 'NV02', N'NGUYỄN VĂN B', 'nvb@yahoo.com', 300000, N'nvb', '123456';
+EXEC SP_INS_PUBLIC_NHANVIEN 'NV03', N'NGUYỄN THỊ C', 'ntc@gmail.com', 350000, N'ntc', '123456';
+EXEC SP_INS_PUBLIC_NHANVIEN 'NV04', N'PHẠM QUANG DUY', 'pqduy@clc.vn', 5000000, N'pqduy', '123456';
 
 ---- ii. Stored dùng để truy vấn dữ liệu nhân viên (NHANVIEN)
 IF EXISTS (SELECT 1 FROM sys.procedures WHERE name = 'SP_SEL_PUBLIC_NHANVIEN')
@@ -131,5 +133,3 @@ BEGIN
 END
 GO
 
-EXEC SP_INS_PUBLIC_NHANVIEN 'NV1', 'NGUYEN VAN A', 'NVA@company.com', 1500000, 'NVA', 'abcd12';
-EXEC SP_SEL_PUBLIC_NHANVIEN 'NVBD', '123456';

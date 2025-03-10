@@ -4,13 +4,6 @@ GO
 
 -- 1. Chèn dữ liệu cho bảng NHANVIEN (nhân viên)
 -- Các giá trị mật khẩu, lương và PUBKEY được lưu dưới dạng VARBINARY (giả định đã mã hóa hoặc sử dụng CONVERT)
-INSERT INTO NHANVIEN (MANV, HOTEN, EMAIL, LUONG, TENDN, MATKHAU, PUBKEY)
-VALUES 
-('NV01', N'Nguyễn Văn A', 'nva@example.com', CONVERT(VARBINARY(MAX), '5000000'), 'NVA', CONVERT(VARBINARY(MAX), 'a123'), 'NV01'),
-('NV02', N'Trần Thị B', 'ttb@example.com', CONVERT(VARBINARY(MAX), '6000000'), 'TTB', CONVERT(VARBINARY(MAX), 'b123'), 'NV02'),
-('NV03', N'Lê Văn C', 'lvc@example.com', CONVERT(VARBINARY(MAX), '5500000'), 'LVC', CONVERT(VARBINARY(MAX), 'c123'), 'NV03'),
-('NV04', N'Phạm Thị D', 'ptd@example.com', CONVERT(VARBINARY(MAX), '5800000'), 'PTD', CONVERT(VARBINARY(MAX), 'd123'), 'NV04');
-GO
 
 -- 2. Chèn dữ liệu cho bảng LOP (lớp học)
 -- Mỗi lớp được giao cho một nhân viên làm chủ nhiệm
@@ -61,7 +54,7 @@ GO
 -- Giả sử mỗi sinh viên có điểm cho tất cả 6 học phần. Điểm thi được lưu dạng VARBINARY với giá trị giả định.
 DECLARE @j INT;
 DECLARE @masv VARCHAR(10);
-SET @i = 1;
+DECLARE @i INT = 1;
 WHILE @i <= 100
 BEGIN
     SET @masv = 'SV' + RIGHT('000' + CAST(@i AS VARCHAR(3)), 3);
