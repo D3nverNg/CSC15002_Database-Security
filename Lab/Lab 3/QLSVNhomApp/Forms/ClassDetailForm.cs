@@ -147,8 +147,8 @@ namespace QLSVNhomApp.Forms
         {
             if (dgvStudents.SelectedRows.Count > 0)
             {
-                string studentId = dgvStudents.SelectedRows[0].Cells["MASV"].Value.ToString();
-                UpdateStudentForm frm = new UpdateStudentForm(connectionString, studentId);
+                //string studentId = dgvStudents.SelectedRows[0].Cells["MASV"].Value.ToString();
+                UpdateStudentForm frm = new UpdateStudentForm(connectionString, classId);
                 frm.ShowDialog();
                 LoadStudents();
             }
@@ -159,7 +159,7 @@ namespace QLSVNhomApp.Forms
         /// </summary>
         private void BtnAddStudent_Click(object sender, EventArgs e)
         {
-            AddStudentForm frm = new AddStudentForm(connectionString);
+            AddStudentForm frm = new AddStudentForm(connectionString, classId);
             frm.ShowDialog();
             LoadStudents();
         }
@@ -171,8 +171,8 @@ namespace QLSVNhomApp.Forms
         {
             if (dgvStudents.SelectedRows.Count > 0)
             {
-                string studentId = dgvStudents.SelectedRows[0].Cells["MASV"].Value.ToString();
-                DeleteStudentForm frm = new DeleteStudentForm(connectionString, studentId);
+                //string studentId = dgvStudents.SelectedRows[0].Cells["MASV"].Value.ToString();
+                DeleteStudentForm frm = new DeleteStudentForm(connectionString, classId);
                 frm.ShowDialog();
                 LoadStudents();
             }
@@ -186,7 +186,7 @@ namespace QLSVNhomApp.Forms
             if (dgvStudents.SelectedRows.Count > 0)
             {
                 string studentId = dgvStudents.SelectedRows[0].Cells["MASV"].Value.ToString();
-                InputScoreForm frm = new InputScoreForm(connectionString, studentId);
+                InputScoreForm frm = new InputScoreForm(connectionString, loggedInEmployeeId);
                 frm.ShowDialog();
                 LoadStudents();
             }

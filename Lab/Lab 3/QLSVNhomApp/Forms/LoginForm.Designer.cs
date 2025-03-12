@@ -48,7 +48,7 @@
             lblTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             lblTitle.Location = new Point(70, 20);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(453, 41);
+            lblTitle.Size = new Size(542, 48);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Chương trình quản lý sinh viên";
             // 
@@ -58,7 +58,7 @@
             lblGroupInfo.Font = new Font("Segoe UI", 10F, FontStyle.Italic);
             lblGroupInfo.Location = new Point(50, 60);
             lblGroupInfo.Name = "lblGroupInfo";
-            lblGroupInfo.Size = new Size(549, 23);
+            lblGroupInfo.Size = new Size(657, 28);
             lblGroupInfo.TabIndex = 1;
             lblGroupInfo.Text = "Nhóm 5: Nguyễn Hồ Đăng Duy 22127085 + Phạm Quang Duy 22127088";
             // 
@@ -68,7 +68,7 @@
             lblLogin.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             lblLogin.Location = new Point(240, 97);
             lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(139, 32);
+            lblLogin.Size = new Size(161, 38);
             lblLogin.TabIndex = 2;
             lblLogin.Text = "Đăng nhập";
             // 
@@ -78,7 +78,7 @@
             lblUsername.Font = new Font("Segoe UI", 12F);
             lblUsername.Location = new Point(80, 150);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(98, 28);
+            lblUsername.Size = new Size(120, 32);
             lblUsername.TabIndex = 3;
             lblUsername.Text = "Tài khoản:";
             // 
@@ -88,7 +88,7 @@
             lblPassword.Font = new Font("Segoe UI", 12F);
             lblPassword.Location = new Point(80, 200);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(98, 28);
+            lblPassword.Size = new Size(120, 32);
             lblPassword.TabIndex = 4;
             lblPassword.Text = "Mật khẩu:";
             // 
@@ -97,7 +97,7 @@
             txtUsername.Font = new Font("Segoe UI", 12F);
             txtUsername.Location = new Point(180, 145);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(300, 34);
+            txtUsername.Size = new Size(300, 39);
             txtUsername.TabIndex = 5;
             // 
             // txtPassword
@@ -106,7 +106,7 @@
             txtPassword.Location = new Point(180, 195);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(300, 34);
+            txtPassword.Size = new Size(300, 39);
             txtPassword.TabIndex = 6;
             // 
             // btnConfirm

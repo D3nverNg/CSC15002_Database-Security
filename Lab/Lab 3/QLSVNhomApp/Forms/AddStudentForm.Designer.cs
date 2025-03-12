@@ -53,7 +53,7 @@
             lblMaSV.Font = new Font("Segoe UI", 10F);
             lblMaSV.Location = new Point(30, 20);
             lblMaSV.Name = "lblMaSV";
-            lblMaSV.Size = new Size(63, 23);
+            lblMaSV.Size = new Size(72, 28);
             lblMaSV.TabIndex = 0;
             lblMaSV.Text = "Mã SV:";
             // 
@@ -63,7 +63,7 @@
             txtMaSV.Location = new Point(140, 17);
             txtMaSV.Name = "txtMaSV";
             txtMaSV.ReadOnly = true;
-            txtMaSV.Size = new Size(100, 30);
+            txtMaSV.Size = new Size(407, 34);
             txtMaSV.TabIndex = 1;
             // 
             // lblHoTen
@@ -72,7 +72,7 @@
             lblHoTen.Font = new Font("Segoe UI", 10F);
             lblHoTen.Location = new Point(30, 60);
             lblHoTen.Name = "lblHoTen";
-            lblHoTen.Size = new Size(66, 23);
+            lblHoTen.Size = new Size(75, 28);
             lblHoTen.TabIndex = 2;
             lblHoTen.Text = "Họ tên:";
             // 
@@ -81,7 +81,7 @@
             txtHoTen.Font = new Font("Segoe UI", 10F);
             txtHoTen.Location = new Point(140, 57);
             txtHoTen.Name = "txtHoTen";
-            txtHoTen.Size = new Size(220, 30);
+            txtHoTen.Size = new Size(407, 34);
             txtHoTen.TabIndex = 3;
             // 
             // lblNgaySinh
@@ -90,7 +90,7 @@
             lblNgaySinh.Font = new Font("Segoe UI", 10F);
             lblNgaySinh.Location = new Point(30, 100);
             lblNgaySinh.Name = "lblNgaySinh";
-            lblNgaySinh.Size = new Size(90, 23);
+            lblNgaySinh.Size = new Size(103, 28);
             lblNgaySinh.TabIndex = 4;
             lblNgaySinh.Text = "Ngày sinh:";
             // 
@@ -101,7 +101,7 @@
             dtpNgaySinh.Format = DateTimePickerFormat.Custom;
             dtpNgaySinh.Location = new Point(140, 95);
             dtpNgaySinh.Name = "dtpNgaySinh";
-            dtpNgaySinh.Size = new Size(132, 30);
+            dtpNgaySinh.Size = new Size(407, 34);
             dtpNgaySinh.TabIndex = 5;
             // 
             // lblDiaChi
@@ -110,16 +110,16 @@
             lblDiaChi.Font = new Font("Segoe UI", 10F);
             lblDiaChi.Location = new Point(30, 140);
             lblDiaChi.Name = "lblDiaChi";
-            lblDiaChi.Size = new Size(66, 23);
+            lblDiaChi.Size = new Size(75, 28);
             lblDiaChi.TabIndex = 6;
             lblDiaChi.Text = "Địa chỉ:";
             // 
             // txtDiaChi
             // 
             txtDiaChi.Font = new Font("Segoe UI", 10F);
-            txtDiaChi.Location = new Point(140, 137);
+            txtDiaChi.Location = new Point(140, 134);
             txtDiaChi.Name = "txtDiaChi";
-            txtDiaChi.Size = new Size(220, 30);
+            txtDiaChi.Size = new Size(407, 34);
             txtDiaChi.TabIndex = 7;
             // 
             // lblTenDN
@@ -128,7 +128,7 @@
             lblTenDN.Font = new Font("Segoe UI", 10F);
             lblTenDN.Location = new Point(30, 180);
             lblTenDN.Name = "lblTenDN";
-            lblTenDN.Size = new Size(128, 23);
+            lblTenDN.Size = new Size(79, 28);
             lblTenDN.TabIndex = 8;
             lblTenDN.Text = "Tên ĐN:";
             // 
@@ -137,7 +137,7 @@
             txtTenDN.Font = new Font("Segoe UI", 10F);
             txtTenDN.Location = new Point(140, 177);
             txtTenDN.Name = "txtTenDN";
-            txtTenDN.Size = new Size(220, 30);
+            txtTenDN.Size = new Size(407, 34);
             txtTenDN.TabIndex = 9;
             // 
             // lblMatKhau
@@ -146,7 +146,7 @@
             lblMatKhau.Font = new Font("Segoe UI", 10F);
             lblMatKhau.Location = new Point(30, 220);
             lblMatKhau.Name = "lblMatKhau";
-            lblMatKhau.Size = new Size(86, 23);
+            lblMatKhau.Size = new Size(98, 28);
             lblMatKhau.TabIndex = 10;
             lblMatKhau.Text = "Mật khẩu:";
             // 
@@ -156,13 +156,13 @@
             txtMatKhau.Location = new Point(140, 217);
             txtMatKhau.Name = "txtMatKhau";
             txtMatKhau.PasswordChar = '*';
-            txtMatKhau.Size = new Size(220, 30);
+            txtMatKhau.Size = new Size(407, 34);
             txtMatKhau.TabIndex = 11;
             // 
             // btnComplete
             // 
             btnComplete.Font = new Font("Segoe UI", 10F);
-            btnComplete.Location = new Point(140, 260);
+            btnComplete.Location = new Point(153, 275);
             btnComplete.Name = "btnComplete";
             btnComplete.Size = new Size(100, 35);
             btnComplete.TabIndex = 12;
@@ -173,7 +173,7 @@
             // btnCancel
             // 
             btnCancel.Font = new Font("Segoe UI", 10F);
-            btnCancel.Location = new Point(260, 260);
+            btnCancel.Location = new Point(357, 275);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(100, 35);
             btnCancel.TabIndex = 13;
@@ -188,12 +188,12 @@
             lblError.ForeColor = Color.Red;
             lblError.Location = new Point(30, 310);
             lblError.Name = "lblError";
-            lblError.Size = new Size(0, 23);
+            lblError.Size = new Size(0, 28);
             lblError.TabIndex = 14;
             // 
             // AddStudentForm
             // 
-            ClientSize = new Size(400, 350);
+            ClientSize = new Size(593, 346);
             Controls.Add(lblMaSV);
             Controls.Add(txtMaSV);
             Controls.Add(lblHoTen);

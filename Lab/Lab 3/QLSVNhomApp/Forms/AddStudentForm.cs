@@ -10,9 +10,11 @@ namespace QLSVNhomApp.Forms
     public partial class AddStudentForm : Form
     {
         private string connectionString;
+        private string ClassId;
 
-        public AddStudentForm(string connStr)
+        public AddStudentForm(string connStr, string classId)
         {
+            ClassId = classId;
             connectionString = connStr;
             InitializeComponent();
             GenerateStudentID();
@@ -36,7 +38,7 @@ namespace QLSVNhomApp.Forms
                         }
                         else
                         {
-                            txtMaSV.Text = "S001"; // Mặc định
+                            txtMaSV.Text = "SV001"; // Mặc định
                         }
                     }
                 }
@@ -80,18 +82,20 @@ namespace QLSVNhomApp.Forms
                     using (SqlCommand cmd = new SqlCommand("SP_INSERT_STUDENT", conn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@MASV", masv);
                         cmd.Parameters.AddWithValue("@HOTEN", hoten);
                         cmd.Parameters.AddWithValue("@NGAYSINH", ngaysinh);
                         cmd.Parameters.AddWithValue("@DIACHI", diachi);
                         cmd.Parameters.AddWithValue("@TENDN", tendn);
                         cmd.Parameters.AddWithValue("@MATKHAU", matkhau);
+                        cmd.Parameters.AddWithValue("@MALOP", ClassId);
 
                         // Output parameters: mã sinh viên và thông báo lỗi
-                        SqlParameter outMasv = new SqlParameter("@MASV", System.Data.SqlDbType.NVarChar, 20)
-                        {
-                            Direction = ParameterDirection.Output
-                        };
-                        cmd.Parameters.Add(outMasv);
+                        //SqlParameter outMasv = new SqlParameter("@MASV", System.Data.SqlDbType.NVarChar, 20)
+                        //{
+                        //    Direction = ParameterDirection.Output
+                        //};
+                        //cmd.Parameters.Add(outMasv);
 
                         SqlParameter outError = new SqlParameter("@ErrorMessage", System.Data.SqlDbType.NVarChar, 200)
                         {
@@ -111,7 +115,7 @@ namespace QLSVNhomApp.Forms
                         {
                             // Thành công: có thể hiển thị thông báo và/hoặc đóng form
                             lblError.ForeColor = Color.Green;
-                            lblError.Text = "Thêm sinh viên thành công. Mã SV: " + outMasv.Value.ToString();
+                            lblError.Text = "Thêm sinh viên thành công. Mã SV: " + masv.ToString();
                         }
                     }
                 }

@@ -18,10 +18,22 @@ CREATE PROCEDURE SP_INS_DIEM
 AS
 BEGIN
     BEGIN TRY
-        UPDATE BANGDIEM
-        SET DIEMTHI = EncryptByKey(Key_GUID(@PUBKEY), CAST(@DIEMTHI AS VARBINARY))
-        WHERE MASV = @MASV AND MAHP = @MAHP;
-        SET @ErrorMessage = '';
+        IF EXISTS (SELECT 1 FROM BANGDIEM WHERE MASV = @MASV AND MAHP = @MAHP)
+        BEGIN
+            -- Nếu đã có điểm, cập nhật điểm mới
+            UPDATE BANGDIEM
+            SET DIEMTHI = ENCRYPTBYASYMKEY(AsymKey_ID(@PUBKEY), CAST(@DIEMTHI AS VARBINARY))
+            WHERE MASV = @MASV AND MAHP = @MAHP;
+            SET @ErrorMessage = '';
+        END
+        ELSE
+        BEGIN
+            -- Nếu chưa có điểm, chèn mới
+            INSERT INTO BANGDIEM (MASV, MAHP, DIEMTHI)
+            VALUES (@MASV, @MAHP, ENCRYPTBYASYMKEY(AsymKey_ID(@PUBKEY), CAST(@DIEMTHI AS VARBINARY)));
+            
+            SET @ErrorMessage = '';
+        END
     END TRY
     BEGIN CATCH
         SET @ErrorMessage = ERROR_MESSAGE();
@@ -145,8 +157,8 @@ BEGIN
     IF @MaxID IS NULL
         SET @NewID = 1;
     ELSE
-        SET @NewID = CAST(SUBSTRING(@MaxID, 2, LEN(@MaxID)) AS INT) + 1;
-    SELECT 'S' + RIGHT('000' + CAST(@NewID AS NVARCHAR(10)), 3) AS NewMASV;
+        SET @NewID = CAST(SUBSTRING(@MaxID, PATINDEX('%[0-9]%', @MaxID), LEN(@MaxID)) AS INT) + 1;
+    SELECT 'SV' + RIGHT('000' + CAST(@NewID AS NVARCHAR(10)), 3) AS NewMASV;
 END
 GO
 
@@ -173,4 +185,54 @@ BEGIN
 
     SET @ErrorMessage = '';
 END
+GO
+
+-- Xóa stored procedure nếu đã tồn tại
+IF OBJECT_ID('SP_INSERT_STUDENT', 'P') IS NOT NULL
+    DROP PROCEDURE SP_INSERT_STUDENT;
+GO
+
+CREATE PROCEDURE SP_INSERT_STUDENT
+    @MASV VARCHAR(20),
+    @HOTEN NVARCHAR(100),
+    @NGAYSINH DATETIME,
+    @DIACHI NVARCHAR(200),
+    @MALOP VARCHAR(20),
+    @TENDN NVARCHAR(100),
+    @MATKHAU NVARCHAR(100),  -- Mật khẩu gốc, sẽ được mã hóa
+    @ErrorMessage NVARCHAR(200) OUTPUT -- Trả về lỗi nếu có
+AS
+BEGIN
+    BEGIN TRY
+        SET NOCOUNT ON;
+
+        -- 1️ Kiểm tra nếu tên đăng nhập đã tồn tại
+        IF EXISTS (SELECT 1 FROM SINHVIEN WHERE TENDN = @TENDN)
+        BEGIN
+            SET @ErrorMessage = 'Tên đăng nhập đã tồn tại!';
+            RETURN;
+        END
+
+        -- 2️ Kiểm tra nếu lớp học tồn tại
+        IF NOT EXISTS (SELECT 1 FROM LOP WHERE MALOP = @MALOP)
+        BEGIN
+            SET @ErrorMessage = 'Mã lớp không hợp lệ!';
+            RETURN;
+        END
+
+        -- 4️ Mã hóa mật khẩu bằng SHA2_256
+        DECLARE @EncryptedPassword VARBINARY(MAX);
+        SET @EncryptedPassword = HASHBYTES('SHA2_256', @MATKHAU);
+
+        -- 5️ Chèn dữ liệu vào bảng SINHVIEN
+        INSERT INTO SINHVIEN (MASV, HOTEN, NGAYSINH, DIACHI, MALOP, TENDN, MATKHAU)
+        VALUES (@MASV, @HOTEN, @NGAYSINH, @DIACHI, @MALOP, @TENDN, @EncryptedPassword);
+
+        SET @ErrorMessage = '';
+    END TRY
+    BEGIN CATCH
+        -- Xử lý lỗi
+        SET @ErrorMessage = ERROR_MESSAGE();
+    END CATCH
+END;
 GO

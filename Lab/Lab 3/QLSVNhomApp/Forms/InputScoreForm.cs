@@ -51,7 +51,6 @@ namespace QLSVNhomApp.Forms
                         cmd.Parameters.AddWithValue("@MAHP", maHP);
                         cmd.Parameters.AddWithValue("@DIEMTHI", diem);
                         cmd.Parameters.AddWithValue("@PUBKEY", loggedInEmployeeID);
-
                         SqlParameter outError = new SqlParameter("@ErrorMessage", SqlDbType.NVarChar, 200)
                         {
                             Direction = ParameterDirection.Output

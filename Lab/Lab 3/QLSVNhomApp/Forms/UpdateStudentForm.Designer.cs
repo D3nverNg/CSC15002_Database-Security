@@ -51,7 +51,7 @@
             lblMaSV.Font = new Font("Segoe UI", 10F);
             lblMaSV.Location = new Point(30, 20);
             lblMaSV.Name = "lblMaSV";
-            lblMaSV.Size = new Size(63, 23);
+            lblMaSV.Size = new Size(72, 28);
             lblMaSV.TabIndex = 0;
             lblMaSV.Text = "Mã SV:";
             // 
@@ -60,15 +60,15 @@
             txtMaSV.Font = new Font("Segoe UI", 10F);
             txtMaSV.Location = new Point(130, 17);
             txtMaSV.Name = "txtMaSV";
-            txtMaSV.Size = new Size(150, 30);
+            txtMaSV.Size = new Size(378, 34);
             txtMaSV.TabIndex = 1;
             // 
             // btnFind
             // 
             btnFind.Font = new Font("Segoe UI", 10F);
-            btnFind.Location = new Point(290, 15);
+            btnFind.Location = new Point(514, 17);
             btnFind.Name = "btnFind";
-            btnFind.Size = new Size(60, 30);
+            btnFind.Size = new Size(96, 36);
             btnFind.TabIndex = 2;
             btnFind.Text = "Tìm";
             btnFind.UseVisualStyleBackColor = true;
@@ -80,7 +80,7 @@
             lblHoTen.Font = new Font("Segoe UI", 10F);
             lblHoTen.Location = new Point(30, 60);
             lblHoTen.Name = "lblHoTen";
-            lblHoTen.Size = new Size(66, 23);
+            lblHoTen.Size = new Size(75, 28);
             lblHoTen.TabIndex = 3;
             lblHoTen.Text = "Họ tên:";
             // 
@@ -89,7 +89,7 @@
             txtHoTen.Font = new Font("Segoe UI", 10F);
             txtHoTen.Location = new Point(130, 57);
             txtHoTen.Name = "txtHoTen";
-            txtHoTen.Size = new Size(220, 30);
+            txtHoTen.Size = new Size(480, 34);
             txtHoTen.TabIndex = 4;
             // 
             // lblNgaySinh
@@ -98,7 +98,7 @@
             lblNgaySinh.Font = new Font("Segoe UI", 10F);
             lblNgaySinh.Location = new Point(30, 100);
             lblNgaySinh.Name = "lblNgaySinh";
-            lblNgaySinh.Size = new Size(90, 23);
+            lblNgaySinh.Size = new Size(103, 28);
             lblNgaySinh.TabIndex = 5;
             lblNgaySinh.Text = "Ngày sinh:";
             // 
@@ -109,7 +109,7 @@
             dtpNgaySinh.Format = DateTimePickerFormat.Custom;
             dtpNgaySinh.Location = new Point(130, 95);
             dtpNgaySinh.Name = "dtpNgaySinh";
-            dtpNgaySinh.Size = new Size(134, 30);
+            dtpNgaySinh.Size = new Size(480, 34);
             dtpNgaySinh.TabIndex = 6;
             // 
             // lblDiaChi
@@ -118,7 +118,7 @@
             lblDiaChi.Font = new Font("Segoe UI", 10F);
             lblDiaChi.Location = new Point(30, 140);
             lblDiaChi.Name = "lblDiaChi";
-            lblDiaChi.Size = new Size(66, 23);
+            lblDiaChi.Size = new Size(75, 28);
             lblDiaChi.TabIndex = 7;
             lblDiaChi.Text = "Địa chỉ:";
             // 
@@ -127,7 +127,7 @@
             txtDiaChi.Font = new Font("Segoe UI", 10F);
             txtDiaChi.Location = new Point(130, 137);
             txtDiaChi.Name = "txtDiaChi";
-            txtDiaChi.Size = new Size(220, 30);
+            txtDiaChi.Size = new Size(480, 34);
             txtDiaChi.TabIndex = 8;
             // 
             // lblMaLop
@@ -136,7 +136,7 @@
             lblMaLop.Font = new Font("Segoe UI", 10F);
             lblMaLop.Location = new Point(30, 180);
             lblMaLop.Name = "lblMaLop";
-            lblMaLop.Size = new Size(67, 23);
+            lblMaLop.Size = new Size(78, 28);
             lblMaLop.TabIndex = 9;
             lblMaLop.Text = "Mã lớp:";
             // 
@@ -145,15 +145,15 @@
             txtMaLop.Font = new Font("Segoe UI", 10F);
             txtMaLop.Location = new Point(130, 177);
             txtMaLop.Name = "txtMaLop";
-            txtMaLop.Size = new Size(150, 30);
+            txtMaLop.Size = new Size(480, 34);
             txtMaLop.TabIndex = 10;
             // 
             // btnComplete
             // 
             btnComplete.Font = new Font("Segoe UI", 10F);
-            btnComplete.Location = new Point(130, 220);
+            btnComplete.Location = new Point(130, 235);
             btnComplete.Name = "btnComplete";
-            btnComplete.Size = new Size(100, 35);
+            btnComplete.Size = new Size(144, 38);
             btnComplete.TabIndex = 11;
             btnComplete.Text = "Hoàn tất";
             btnComplete.UseVisualStyleBackColor = true;
@@ -162,9 +162,9 @@
             // btnCancel
             // 
             btnCancel.Font = new Font("Segoe UI", 10F);
-            btnCancel.Location = new Point(250, 220);
+            btnCancel.Location = new Point(368, 235);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(100, 35);
+            btnCancel.Size = new Size(140, 38);
             btnCancel.TabIndex = 12;
             btnCancel.Text = "Hủy";
             btnCancel.UseVisualStyleBackColor = true;
@@ -177,12 +177,12 @@
             lblError.ForeColor = Color.Red;
             lblError.Location = new Point(30, 270);
             lblError.Name = "lblError";
-            lblError.Size = new Size(0, 23);
+            lblError.Size = new Size(0, 28);
             lblError.TabIndex = 13;
             // 
             // UpdateStudentForm
             // 
-            ClientSize = new Size(400, 300);
+            ClientSize = new Size(631, 306);
             Controls.Add(lblMaSV);
             Controls.Add(txtMaSV);
             Controls.Add(btnFind);
