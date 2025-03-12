@@ -10,11 +10,13 @@ namespace QLSVNhomApp.Forms
     {
         private string connectionString;
         private string loggedInEmployeeID;
+        private string classID;
 
-        public InputScoreForm(string connStr, string empID)
+        public InputScoreForm(string connStr, string empID, string classId)
         {
             connectionString = connStr;
             loggedInEmployeeID = empID;
+            classID = classId;
             InitializeComponent();
         }
 
@@ -44,6 +46,23 @@ namespace QLSVNhomApp.Forms
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
+                    using (SqlCommand checkCmd = new SqlCommand("SP_FIND_STUDENT_IN_CLASS", conn))
+                    {
+                        checkCmd.CommandType = CommandType.StoredProcedure;
+                        checkCmd.Parameters.AddWithValue("@MASV", maSV);
+                        checkCmd.Parameters.AddWithValue("@MALOP", classID); 
+
+                        SqlDataAdapter adapter = new SqlDataAdapter(checkCmd);
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+
+                        if (dt.Rows.Count == 0)  
+                        {
+                            lblMessage.ForeColor = System.Drawing.Color.Red;
+                            lblMessage.Text = "Sinh viên không thuộc lớp này. Không thể nhập điểm!";
+                            return;
+                        }
+                    }
                     using (SqlCommand cmd = new SqlCommand("SP_INS_DIEM", conn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;

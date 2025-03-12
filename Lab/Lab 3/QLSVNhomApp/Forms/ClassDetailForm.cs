@@ -185,8 +185,8 @@ namespace QLSVNhomApp.Forms
         {
             if (dgvStudents.SelectedRows.Count > 0)
             {
-                string studentId = dgvStudents.SelectedRows[0].Cells["MASV"].Value.ToString();
-                InputScoreForm frm = new InputScoreForm(connectionString, loggedInEmployeeId);
+                //string studentId = dgvStudents.SelectedRows[0].Cells["MASV"].Value.ToString();
+                InputScoreForm frm = new InputScoreForm(connectionString, loggedInEmployeeId, classId);
                 frm.ShowDialog();
                 LoadStudents();
             }
