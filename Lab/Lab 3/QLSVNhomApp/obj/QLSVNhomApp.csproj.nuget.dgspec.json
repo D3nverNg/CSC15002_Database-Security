@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\quang\\OneDrive\\Máy tính\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\QLSVNhomApp.csproj": {}
+    "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\QLSVNhomApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\quang\\OneDrive\\Máy tính\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\QLSVNhomApp.csproj": {
+    "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\QLSVNhomApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\quang\\OneDrive\\Máy tính\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\QLSVNhomApp.csproj",
+        "projectUniqueName": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\QLSVNhomApp.csproj",
         "projectName": "QLSVNhomApp",
-        "projectPath": "C:\\Users\\quang\\OneDrive\\Máy tính\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\QLSVNhomApp.csproj",
-        "packagesPath": "C:\\Users\\quang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\quang\\OneDrive\\Máy tính\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\obj\\",
+        "projectPath": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\QLSVNhomApp.csproj",
+        "packagesPath": "C:\\Users\\p14s\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\quang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\p14s\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

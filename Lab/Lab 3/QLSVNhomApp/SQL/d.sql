@@ -239,6 +239,38 @@ BEGIN
         SET @ErrorMessage = ERROR_MESSAGE();
     END CATCH
 END;
+GO
 
+-- Xóa procedure nếu tồn tại trước khi tạo mới
+IF OBJECT_ID('SP_LOGIN_NHANVIEN', 'P') IS NOT NULL
+    DROP PROCEDURE SP_LOGIN_NHANVIEN;
+GO
 
+CREATE PROCEDURE SP_LOGIN_NHANVIEN
+    @MANV VARCHAR(20),
+    @MK VARCHAR(100)
+AS
+BEGIN
+    SET NOCOUNT ON;
 
+    -- Kiểm tra xem nhân viên có tồn tại không
+    DECLARE @HashedPassword VARBINARY(100)
+
+    SELECT @HashedPassword = MATKHAU
+    FROM NHANVIEN
+    WHERE MANV = @MANV
+
+    ---- Kiểm tra mật khẩu
+    IF @HashedPassword = HASHBYTES('SHA1', @MK)
+    BEGIN
+        SELECT MANV, HOTEN, EMAIL
+        FROM NHANVIEN
+        WHERE MANV = @MANV
+    END
+    ELSE
+    BEGIN
+        -- Nếu mật khẩu không khớp, trả về không có bản ghi nào
+        SELECT NULL AS MANV, NULL AS HOTEN, NULL AS EMAIL
+    END
+END
+GO

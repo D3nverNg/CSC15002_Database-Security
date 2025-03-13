@@ -46,7 +46,7 @@
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            lblTitle.Location = new Point(70, 20);
+            lblTitle.Location = new Point(140, 20);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(542, 48);
             lblTitle.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             lblGroupInfo.AutoSize = true;
             lblGroupInfo.Font = new Font("Segoe UI", 10F, FontStyle.Italic);
-            lblGroupInfo.Location = new Point(50, 60);
+            lblGroupInfo.Location = new Point(70, 60);
             lblGroupInfo.Name = "lblGroupInfo";
             lblGroupInfo.Size = new Size(657, 28);
             lblGroupInfo.TabIndex = 1;
@@ -66,7 +66,7 @@
             // 
             lblLogin.AutoSize = true;
             lblLogin.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            lblLogin.Location = new Point(240, 97);
+            lblLogin.Location = new Point(260, 97);
             lblLogin.Name = "lblLogin";
             lblLogin.Size = new Size(161, 38);
             lblLogin.TabIndex = 2;
@@ -80,7 +80,7 @@
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(120, 32);
             lblUsername.TabIndex = 3;
-            lblUsername.Text = "Tài khoản:";
+            lblUsername.Text = "Mã NV:";
             // 
             // lblPassword
             // 

@@ -1,11 +1,4 @@
 ﻿--ab.sql
---USE master;
---GO
---ALTER DATABASE QLSVNhom SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
---GO
---DROP DATABASE QLSVNhom;
---GO
-
 USE master;
 GO
 

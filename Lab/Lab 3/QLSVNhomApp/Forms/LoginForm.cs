@@ -19,15 +19,15 @@ namespace QLSVNhomApp.Forms
 
             using (SqlConnection conn = new SqlConnection(DatabaseHelper.ConnectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("SP_SEL_PUBLIC_NHANVIEN", conn))
+                using (SqlCommand cmd = new SqlCommand("SP_LOGIN_NHANVIEN", conn))
                 {
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@TENDN", username);
+                    cmd.Parameters.AddWithValue("@MANV", username);
                     cmd.Parameters.AddWithValue("@MK", password);
 
                     conn.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
-                    if (reader.Read())
+                    if (reader.Read() && reader["MANV"] != DBNull.Value)
                     {
                         string employeeId = reader["MANV"].ToString();
                         // Lưu thông tin đăng nhập (ví dụ: MANV và HOTEN)
