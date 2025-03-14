@@ -66,7 +66,7 @@ namespace QLSVNhomApp.Forms
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(709, 34);
             txtSearch.TabIndex = 0;
-            txtSearch.Text = "Tìm kiếm sinh viên theo mã hoặc tên";
+            txtSearch.Text = "Tìm kiếm sinh viên theo mã sinh viên";
             txtSearch.Enter += TxtSearch_Enter;
             txtSearch.Leave += TxtSearch_Leave;
             // 

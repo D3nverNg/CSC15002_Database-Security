@@ -121,7 +121,7 @@ namespace QLSVNhomApp.Forms
         /// </summary>
         private void TxtSearch_Enter(object sender, EventArgs e)
         {
-            if (txtSearch.Text == "Tìm kiếm sinh viên theo mã hoặc tên")
+            if (txtSearch.Text == "Tìm kiếm sinh viên theo mã sinh viên")
             {
                 txtSearch.Text = "";
                 txtSearch.ForeColor = Color.Black;
@@ -135,7 +135,7 @@ namespace QLSVNhomApp.Forms
         {
             if (string.IsNullOrWhiteSpace(txtSearch.Text))
             {
-                txtSearch.Text = "Tìm kiếm sinh viên theo mã hoặc tên";
+                txtSearch.Text = "Tìm kiếm sinh viên theo mã sinh viên";
                 txtSearch.ForeColor = Color.Gray;
             }
         }
