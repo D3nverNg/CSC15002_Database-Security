@@ -25,9 +25,9 @@ GO
 -- 3. Chèn dữ liệu cho bảng HOCPHAN (học phần)
 INSERT INTO HOCPHAN (MAHP, TENHP, SOTC)
 VALUES
-('HP01', N' Cấu trúc dữ liệu và giải thuật ', 4),
+('HP01', N' DSA', 4),
 ('HP02', N' Mạng máy tính ', 4),
-('HP03', N' Phương pháp lập trình hướng đối tượng ', 4),
+('HP03', N' OOP', 4),
 ('HP04', N' Triết học Mác - Lênin ', 3),
 ('HP05', N' Kỹ năng mềm ', 3);
 GO
@@ -152,4 +152,3 @@ EXEC SP_INS_DIEM 'SV005','HP03','7','NV01','';
 EXEC SP_INS_DIEM 'SV006','HP05','7','NV02','';
 EXEC SP_INS_DIEM 'SV007','HP05','8','NV02','';
 EXEC SP_INS_DIEM 'SV100','HP04','10','NV03','';
-

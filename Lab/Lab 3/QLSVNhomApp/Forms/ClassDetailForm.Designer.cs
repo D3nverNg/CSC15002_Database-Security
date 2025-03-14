@@ -153,7 +153,7 @@ namespace QLSVNhomApp.Forms
             btnInputScore.Name = "btnInputScore";
             btnInputScore.Size = new Size(219, 48);
             btnInputScore.TabIndex = 3;
-            btnInputScore.Text = "Nhập điểm";
+            btnInputScore.Text = "Chỉnh sửa điểm";
             btnInputScore.Click += BtnInputScore_Click;
             // 
             // mainLayout

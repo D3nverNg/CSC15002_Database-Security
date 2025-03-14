@@ -175,3 +175,4 @@ C:\Users\quang\OneDrive\Máy tính\clone_db_sec\CSC15002_Database-Security\Lab\L
 C:\Users\quang\OneDrive\Máy tính\clone_db_sec\CSC15002_Database-Security\Lab\Lab 3\QLSVNhomApp\obj\Debug\net8.0-windows\QLSVNhomApp.pdb
 C:\Users\quang\OneDrive\Máy tính\clone_db_sec\CSC15002_Database-Security\Lab\Lab 3\QLSVNhomApp\obj\Debug\net8.0-windows\QLSVNhomApp.genruntimeconfig.cache
 C:\Users\quang\OneDrive\Máy tính\clone_db_sec\CSC15002_Database-Security\Lab\Lab 3\QLSVNhomApp\obj\Debug\net8.0-windows\ref\QLSVNhomApp.dll
+C:\Users\p14s\CODE\CSC15002_Database-Security\Lab\Lab 3\QLSVNhomApp\obj\Debug\net8.0-windows\QLSVNhomApp.Forms.ScoreDetailForm.resources
