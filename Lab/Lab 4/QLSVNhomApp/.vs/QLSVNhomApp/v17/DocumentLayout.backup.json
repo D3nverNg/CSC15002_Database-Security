@@ -1,30 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\",
+  "WorkspaceRootPath": "C:\\Users\\quang\\OneDrive\\M\u00E1y t\u00EDnh\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 4\\QLSVNhomApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\p14s\\code\\csc15002_database-security\\lab\\lab 3\\qlsvnhomapp\\forms\\scoredetailform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|solutionrelative:forms\\scoredetailform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\quang\\onedrive\\m\u00E1y t\u00EDnh\\clone_db_sec\\csc15002_database-security\\lab\\lab 4\\qlsvnhomapp\\sql\\c.sql||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|solutionrelative:sql\\c.sql||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\p14s\\code\\csc15002_database-security\\lab\\lab 3\\qlsvnhomapp\\forms\\inputscoreform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|solutionrelative:forms\\inputscoreform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\p14s\\code\\csc15002_database-security\\lab\\lab 3\\qlsvnhomapp\\forms\\inputscoreform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|solutionrelative:forms\\inputscoreform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\p14s\\code\\csc15002_database-security\\lab\\lab 3\\qlsvnhomapp\\forms\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|solutionrelative:forms\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|solutionrelative:forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\p14s\\code\\csc15002_database-security\\lab\\lab 3\\qlsvnhomapp\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|solutionrelative:forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\quang\\onedrive\\m\u00E1y t\u00EDnh\\clone_db_sec\\csc15002_database-security\\lab\\lab 4\\qlsvnhomapp\\forms\\addemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|solutionrelative:forms\\addemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,77 +27,28 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ScoreDetailForm.cs",
-              "DocumentMoniker": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\ScoreDetailForm.cs",
-              "RelativeDocumentMoniker": "Forms\\ScoreDetailForm.cs",
-              "ToolTip": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\ScoreDetailForm.cs",
-              "RelativeToolTip": "Forms\\ScoreDetailForm.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAIwDAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T11:22:08.92Z",
+              "Title": "c.sql",
+              "DocumentMoniker": "C:\\Users\\quang\\OneDrive\\M\u00E1y t\u00EDnh\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 4\\QLSVNhomApp\\SQL\\c.sql",
+              "RelativeDocumentMoniker": "SQL\\c.sql",
+              "ToolTip": "C:\\Users\\quang\\OneDrive\\M\u00E1y t\u00EDnh\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 4\\QLSVNhomApp\\SQL\\c.sql",
+              "RelativeToolTip": "SQL\\c.sql",
+              "ViewState": "AgIAABsAAAAAAAAAAAAgwC8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-03-22T09:15:46.236Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "InputScoreForm.cs",
-              "DocumentMoniker": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\InputScoreForm.cs",
-              "RelativeDocumentMoniker": "Forms\\InputScoreForm.cs",
-              "ToolTip": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\InputScoreForm.cs",
-              "RelativeToolTip": "Forms\\InputScoreForm.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAQwEcAAABRAAAAAAAAAA==",
+              "Title": "AddEmployeeForm.cs",
+              "DocumentMoniker": "C:\\Users\\quang\\OneDrive\\M\u00E1y t\u00EDnh\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 4\\QLSVNhomApp\\Forms\\AddEmployeeForm.cs",
+              "RelativeDocumentMoniker": "Forms\\AddEmployeeForm.cs",
+              "ToolTip": "C:\\Users\\quang\\OneDrive\\M\u00E1y t\u00EDnh\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 4\\QLSVNhomApp\\Forms\\AddEmployeeForm.cs",
+              "RelativeToolTip": "Forms\\AddEmployeeForm.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAmwEYAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T11:26:40.473Z",
+              "WhenOpened": "2025-03-22T02:36:40.652Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "InputScoreForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\InputScoreForm.cs",
-              "RelativeDocumentMoniker": "Forms\\InputScoreForm.cs",
-              "ToolTip": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\InputScoreForm.cs [Design]",
-              "RelativeToolTip": "Forms\\InputScoreForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T11:26:37.019Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LoginForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\LoginForm.Designer.cs",
-              "RelativeDocumentMoniker": "Forms\\LoginForm.Designer.cs",
-              "ToolTip": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\LoginForm.Designer.cs",
-              "RelativeToolTip": "Forms\\LoginForm.Designer.cs",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAYwHcAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T14:42:25.752Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "LoginForm.cs",
-              "DocumentMoniker": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\LoginForm.cs",
-              "RelativeDocumentMoniker": "Forms\\LoginForm.cs",
-              "ToolTip": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\LoginForm.cs",
-              "RelativeToolTip": "Forms\\LoginForm.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:59:17.19Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LoginForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\LoginForm.cs",
-              "RelativeDocumentMoniker": "Forms\\LoginForm.cs",
-              "ToolTip": "C:\\Users\\p14s\\CODE\\CSC15002_Database-Security\\Lab\\Lab 3\\QLSVNhomApp\\Forms\\LoginForm.cs [Design]",
-              "RelativeToolTip": "Forms\\LoginForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T10:21:05.783Z"
             }
           ]
         }

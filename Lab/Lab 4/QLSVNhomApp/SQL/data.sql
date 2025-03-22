@@ -4,11 +4,11 @@ GO
 
 -- 1. Chèn dữ liệu cho bảng NHANVIEN (nhân viên)
 -- Các giá trị mật khẩu, lương và PUBKEY được lưu dưới dạng VARBINARY (giả định đã mã hóa hoặc sử dụng CONVERT)
-EXEC SP_INS_PUBLIC_NHANVIEN 'NV01', N'NGUYỄN VĂN A', 'nva@company.com', 1500000, N'nva', N'123456';
-EXEC SP_INS_PUBLIC_NHANVIEN 'NV02', N'NGUYỄN VĂN B', 'nvb@yahoo.com', 300000, N'nvb', N'111111';
-EXEC SP_INS_PUBLIC_NHANVIEN 'NV03', N'NGUYỄN THỊ C', 'ntc@gmail.com', 350000, N'ntc', N'123';
-EXEC SP_INS_PUBLIC_NHANVIEN 'NV04', N'PHẠM QUANG DUY', 'pqduy@clc.vn', 5000000, N'pqduy', N'34567';
-EXEC SP_INS_PUBLIC_NHANVIEN 'NV05', N'NGUYỄN HỒ ĐĂNG DUY', 'nhdduy@yahoo.com', 99999999, N'nhdduy', N'999';
+--EXEC SP_INS_PUBLIC_NHANVIEN 'NV01', N'NGUYỄN VĂN A', 'nva@company.com', 1500000, N'nva', N'123456';
+--EXEC SP_INS_PUBLIC_NHANVIEN 'NV02', N'NGUYỄN VĂN B', 'nvb@yahoo.com', 300000, N'nvb', N'111111';
+--EXEC SP_INS_PUBLIC_NHANVIEN 'NV03', N'NGUYỄN THỊ C', 'ntc@gmail.com', 350000, N'ntc', N'123';
+--EXEC SP_INS_PUBLIC_NHANVIEN 'NV04', N'PHẠM QUANG DUY', 'pqduy@clc.vn', 5000000, N'pqduy', N'34567';
+--EXEC SP_INS_PUBLIC_NHANVIEN 'NV05', N'NGUYỄN HỒ ĐĂNG DUY', 'nhdduy@yahoo.com', 99999999, N'nhdduy', N'999';
 
 -- 2. Chèn dữ liệu cho bảng LOP (lớp học)
 -- Mỗi lớp được giao cho một nhân viên làm chủ nhiệm

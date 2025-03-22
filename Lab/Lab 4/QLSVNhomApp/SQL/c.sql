@@ -10,51 +10,48 @@ END
 GO
 
 CREATE PROCEDURE SP_INS_PUBLIC_NHANVIEN
-    @MANV VARCHAR(20),
+    @MANV NVARCHAR(20),
     @HOTEN NVARCHAR(100),
-    @EMAIL VARCHAR(100),
-    @LUONGCB INT,
+    @EMAIL NVARCHAR(100),
+    @LUONGCB VARBINARY(MAX),     -- RSA encrypted, base64 string
     @TENDN NVARCHAR(100),
-    @MK NVARCHAR(100)
+    @MK VARBINARY(MAX),          -- SHA1 hashed password (hex string)
+	@PUBKEY VARCHAR(MAX),
+    @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN
     SET NOCOUNT ON;
 
-    -- Kiểm tra nếu nhân viên đã tồn tại
-    IF EXISTS (SELECT 1 FROM NHANVIEN WHERE MANV = @MANV)
-    BEGIN
-        RAISERROR('@MANV is exist', 16, 1);
-        RETURN;
-    END
+    BEGIN TRY
+        -- Kiểm tra nếu nhân viên đã tồn tại
+        IF EXISTS (SELECT 1 FROM NHANVIEN WHERE MANV = @MANV)
+        BEGIN
+            SET @ErrorMessage = N'Mã nhân viên đã tồn tại.';
+            RETURN;
+        END
+		DECLARE @SQL NVARCHAR(MAX);
+		-- Kiểm tra nếu Asymmetric Key đã tồn tại
+		IF NOT EXISTS (SELECT 1 FROM sys.asymmetric_keys WHERE name = @MANV)
+		BEGIN
+			-- Tạo Asymmetric Key riêng cho nhân viên
+			SET @SQL = 'CREATE ASYMMETRIC KEY ' + @MANV+
+	' WITH ALGORITHM = RSA_2048 ENCRYPTION BY PASSWORD = '''+@MK+''''
+			EXEC sp_executesql @SQL;
+		END
 
-	-- Khai báo biến
-	DECLARE @HASHED_PASSWORD VARBINARY(100);
-    DECLARE @ENCRYPTED_SALARY VARBINARY(100);
-	DECLARE @SQL NVARCHAR(MAX);
+        -- Thêm dữ liệu vào bảng NHANVIEN
+        INSERT INTO NHANVIEN (MANV, HOTEN, EMAIL, LUONG, TENDN, MATKHAU, PUBKEY)
+        VALUES (@MANV, @HOTEN, @EMAIL, @LUONGCB, @TENDN, @MK, @PUBKEY);
 
-    -- Mã hóa mật khẩu sử dụng SHA1
-    SET @HASHED_PASSWORD = HASHBYTES('SHA1', @MK);
-
-    -- Kiểm tra nếu Asymmetric Key đã tồn tại
-    IF NOT EXISTS (SELECT 1 FROM sys.asymmetric_keys WHERE name = @MANV)
-    BEGIN
-        -- Tạo Asymmetric Key riêng cho nhân viên
-        SET @SQL = 'CREATE ASYMMETRIC KEY ' + @MANV+
-' WITH ALGORITHM = RSA_2048 ENCRYPTION BY PASSWORD = '''+@MK+''''
-        EXEC sp_executesql @SQL;
-    END
-
-    -- Mã hóa lương bằng key của nhân viên
-    DECLARE @ENCRYPTED_LUONG VARBINARY(500);
-    SET @ENCRYPTED_LUONG = ENCRYPTBYASYMKEY(AsymKey_ID(@MANV), CONVERT(VARCHAR, @LUONGCB));
-
-    -- Thêm dữ liệu vào bảng NHANVIEN
-    INSERT INTO NHANVIEN (MANV, HOTEN, EMAIL, LUONG, TENDN, MATKHAU, PUBKEY)
-    VALUES (@MANV, @HOTEN, @EMAIL, @ENCRYPTED_LUONG, @TENDN, @HASHED_PASSWORD, @MANV);
+        SET @ErrorMessage = N''; -- OK
+    END TRY
+    BEGIN CATCH
+        SET @ErrorMessage = ERROR_MESSAGE();
+    END CATCH
 END
 GO
 
----- ii. Stored dùng để truy vấn dữ liệu nhân viên (NHANVIEN)
+---- LAB 3 ii. Stored dùng để truy vấn dữ liệu nhân viên (NHANVIEN)
 IF EXISTS (SELECT 1 FROM sys.procedures WHERE name = 'SP_SEL_PUBLIC_NHANVIEN')
 BEGIN
     DROP PROCEDURE SP_SEL_PUBLIC_NHANVIEN;
@@ -96,6 +93,21 @@ BEGIN
 END
 GO
 
---EXEC SP_INS_PUBLIC_NHANVIEN 'NV12', N'NGUYỄN THỊ YẾN THƠ', 'ntytho@yahoo.com', 99999989, N'ntytho', N'2111';
---EXEC SP_SEL_PUBLIC_NHANVIEN N'nva', N'123456';
+---- LAB 4 ii. Stored dùng để truy vấn dữ liệu nhân viên còn mã hóa (NHANVIEN)
+IF OBJECT_ID('SP_SEL_PUBLIC_ENCRYPT_NHANVIEN', 'P') IS NOT NULL
+    DROP PROCEDURE SP_SEL_PUBLIC_ENCRYPT_NHANVIEN;
+GO
+
+CREATE PROCEDURE SP_SEL_PUBLIC_ENCRYPT_NHANVIEN
+    @TENDN NVARCHAR(100),
+    @MK VARBINARY(MAX)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT MANV, HOTEN, EMAIL, LUONG
+    FROM NHANVIEN
+    WHERE MANV = @TENDN AND MATKHAU = @MK;
+END
+GO
 

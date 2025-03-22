@@ -279,18 +279,19 @@ GO
 
 CREATE PROCEDURE SP_LOGIN_NHANVIEN
     @MANV VARCHAR(20),
-    @MK NVARCHAR(100)
+    @MK VARBINARY(MAX) -- SHA1 đã mã hóa base64 từ C#
 AS
 BEGIN
     SET NOCOUNT ON;
 
-    DECLARE @HashedPassword VARBINARY(100)
+    -- Convert base64 string -> VARBINARY
+    DECLARE @MK_BIN VARBINARY(MAX) =
+        CONVERT(VARBINARY(MAX), CAST(N'' AS XML).value('xs:base64Binary(sql:variable("@MK"))', 'VARBINARY(MAX)'));
 
-    SELECT @HashedPassword = MATKHAU
-    FROM NHANVIEN
-    WHERE MANV = @MANV
-
-    IF @HashedPassword = HASHBYTES('SHA1', @MK)
+    IF EXISTS (
+        SELECT 1 FROM NHANVIEN
+        WHERE MANV = @MANV AND MATKHAU = @MK_BIN
+    )
     BEGIN
         SELECT MANV, HOTEN, EMAIL
         FROM NHANVIEN

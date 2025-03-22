@@ -2,6 +2,10 @@
 using Microsoft.Data.SqlClient;
 using System.Windows.Forms;
 using QLSVNhomApp.Data;
+using QLSVNhomApp.Forms;
+using System.Text;
+using System.Security.Cryptography;
+using System.Data;
 
 namespace QLSVNhomApp.Forms
 {
@@ -16,6 +20,7 @@ namespace QLSVNhomApp.Forms
         {
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
+            byte[] hashedPasswordBytes = HashPasswordSHA1(password);
 
             using (SqlConnection conn = new SqlConnection(DatabaseHelper.ConnectionString))
             {
@@ -23,7 +28,9 @@ namespace QLSVNhomApp.Forms
                 {
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@MANV", username);
-                    cmd.Parameters.AddWithValue("@MK", password);
+                    SqlParameter mkParam = new SqlParameter("@MK", SqlDbType.VarBinary, 20);
+                    mkParam.Value = hashedPasswordBytes;
+                    cmd.Parameters.Add(mkParam);
 
                     conn.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -35,7 +42,7 @@ namespace QLSVNhomApp.Forms
                         ClassManagementForm.LoggedInUserName = reader["HOTEN"].ToString();
 
                         // Mở giao diện quản lý lớp học
-                        ClassManagementForm cmf = new ClassManagementForm(DatabaseHelper.ConnectionString, employeeId);
+                        ClassManagementForm cmf = new ClassManagementForm(DatabaseHelper.ConnectionString, employeeId, password);
                         this.Hide();
                         cmf.Show();
                     }
@@ -47,11 +54,24 @@ namespace QLSVNhomApp.Forms
                 }
             }
         }
+        private byte[] HashPasswordSHA1(string input)
+        {
+            using (SHA1 sha1 = SHA1.Create())
+            {
+                return sha1.ComputeHash(Encoding.UTF8.GetBytes(input));
+            }
+        }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             txtUsername.Clear();
             txtPassword.Clear();
+        }
+
+        private void buttonAddEmploy_Click(object sender, EventArgs e)
+        {
+            AddEmployeeForm addForm = new AddEmployeeForm();
+            addForm.ShowDialog();
         }
     }
 }

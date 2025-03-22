@@ -11,14 +11,16 @@ namespace QLSVNhomApp.Forms
     {
         public static string LoggedInEmployeeID { get; set; }
         public static string LoggedInUserName { get; set; }
+        public static string LoggedInPassword { get; set; }
 
         private string connectionString;
         private string searchPlaceholder = "Tìm kiếm lớp học theo mã lớp hoặc tên lớp";
         private string loggedInEmployeeId;
-        public ClassManagementForm(string connStr, string employeeId)
+        public ClassManagementForm(string connStr, string employeeId, string password)
         {
             connectionString = connStr;
             this.loggedInEmployeeId = employeeId;
+            LoggedInPassword = password;
             InitializeComponent();
             lblGreeting.Text = "Xin chào " + LoggedInUserName;
             AdjustDataGridViewSize();
@@ -150,6 +152,12 @@ namespace QLSVNhomApp.Forms
                 ClassDetailForm detailForm = new ClassDetailForm(connectionString, classId, loggedInEmployeeId);
                 detailForm.ShowDialog();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ProfileForm pf = new ProfileForm(connectionString, LoggedInEmployeeID, LoggedInPassword);
+            pf.ShowDialog();
         }
     }
 }

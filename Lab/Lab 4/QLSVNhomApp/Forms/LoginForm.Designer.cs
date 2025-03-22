@@ -40,6 +40,7 @@
             txtPassword = new TextBox();
             btnConfirm = new Button();
             btnCancel = new Button();
+            buttonAddEmploy = new Button();
             SuspendLayout();
             // 
             // lblTitle
@@ -78,7 +79,7 @@
             lblUsername.Font = new Font("Segoe UI", 12F);
             lblUsername.Location = new Point(80, 150);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(120, 32);
+            lblUsername.Size = new Size(93, 32);
             lblUsername.TabIndex = 3;
             lblUsername.Text = "Mã NV:";
             // 
@@ -131,9 +132,20 @@
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
             // 
+            // buttonAddEmploy
+            // 
+            buttonAddEmploy.Location = new Point(245, 325);
+            buttonAddEmploy.Name = "buttonAddEmploy";
+            buttonAddEmploy.Size = new Size(165, 34);
+            buttonAddEmploy.TabIndex = 9;
+            buttonAddEmploy.Text = "Thêm nhân viên";
+            buttonAddEmploy.UseVisualStyleBackColor = true;
+            buttonAddEmploy.Click += buttonAddEmploy_Click;
+            // 
             // LoginForm
             // 
             ClientSize = new Size(618, 400);
+            Controls.Add(buttonAddEmploy);
             Controls.Add(btnCancel);
             Controls.Add(btnConfirm);
             Controls.Add(txtPassword);
@@ -151,5 +163,7 @@
         }
 
         #endregion
+
+        private Button buttonAddEmploy;
     }
 }

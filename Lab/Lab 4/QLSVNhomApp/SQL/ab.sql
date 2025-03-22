@@ -34,7 +34,7 @@ CREATE TABLE NHANVIEN (
     LUONG VARBINARY(MAX),  -- Lưu giá trị lương sau khi mã hóa
     TENDN NVARCHAR(100) NOT NULL UNIQUE,
     MATKHAU VARBINARY(MAX) NOT NULL,  -- Lưu mật khẩu đã được mã hóa (SHA1)
-    PUBKEY VARCHAR(20)  -- Tên khóa công khai, bằng với MANV
+    PUBKEY VARCHAR(MAX)  -- Tên khóa công khai, bằng với MANV
 );
 
 -- Tạo bảng LOP
