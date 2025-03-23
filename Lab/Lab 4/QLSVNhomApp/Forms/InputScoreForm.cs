@@ -3,6 +3,7 @@ using System.Data;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using QLSVNhomApp.Data;
+using QLSVNhomApp.Utils;
 
 namespace QLSVNhomApp.Forms
 {
@@ -63,13 +64,28 @@ namespace QLSVNhomApp.Forms
                             return;
                         }
                     }
+
+                    string pubKeyXml = null;
+                    using (SqlCommand getKeyCmd = new SqlCommand("SELECT PUBKEY FROM NHANVIEN WHERE MANV = @MANV", conn))
+                    {
+                        getKeyCmd.Parameters.AddWithValue("@MANV", loggedInEmployeeID);
+                        object result = getKeyCmd.ExecuteScalar();
+                        if (result == null)
+                        {
+                            lblMessage.ForeColor = System.Drawing.Color.Red;
+                            lblMessage.Text = "Không tìm thấy khóa công khai cho nhân viên.";
+                            return;
+                        }
+                        pubKeyXml = result.ToString();
+                    }
+                    byte[] encryptedScore = EncryptionHelper.EncryptWithPublicKey(diemStr, pubKeyXml);
+
                     using (SqlCommand cmd = new SqlCommand("SP_INS_DIEM", conn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@MASV", maSV);
                         cmd.Parameters.AddWithValue("@MAHP", maHP);
-                        cmd.Parameters.AddWithValue("@DIEMTHI", diem);
-                        cmd.Parameters.AddWithValue("@PUBKEY", loggedInEmployeeID);
+                        cmd.Parameters.Add("@DIEMTHI", SqlDbType.VarBinary, -1).Value = encryptedScore;
                         SqlParameter outError = new SqlParameter("@ErrorMessage", SqlDbType.NVarChar, 200)
                         {
                             Direction = ParameterDirection.Output

@@ -25,6 +25,7 @@
             lblEmail = new Label();
             lblLuong = new Label();
             btnClose = new Button();
+            buttonDecr = new Button();
             SuspendLayout();
             // 
             // lblTitle
@@ -83,9 +84,20 @@
             btnClose.Text = "Đóng";
             btnClose.Click += btnClose_Click;
             // 
+            // buttonDecr
+            // 
+            buttonDecr.Location = new Point(296, 357);
+            buttonDecr.Name = "buttonDecr";
+            buttonDecr.Size = new Size(153, 34);
+            buttonDecr.TabIndex = 6;
+            buttonDecr.Text = "Giải mã lương";
+            buttonDecr.UseVisualStyleBackColor = true;
+            buttonDecr.Click += buttonDecr_Click;
+            // 
             // ProfileForm
             // 
             ClientSize = new Size(557, 409);
+            Controls.Add(buttonDecr);
             Controls.Add(lblTitle);
             Controls.Add(lblManv);
             Controls.Add(lblHoten);
@@ -99,6 +111,7 @@
             ResumeLayout(false);
             PerformLayout();
         }
+        private Button buttonDecr;
     }
 }
 

@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using QLSVNhomApp.Data;
+using QLSVNhomApp.Utils;
 
 namespace QLSVNhomApp.Forms
 {
@@ -13,7 +14,7 @@ namespace QLSVNhomApp.Forms
         private string classId;
         private string employeeId;
         private string errorMessage;
-        private string encryptedPassword = "123456";
+
         public ScoreDetailForm(string connStr, string empId, string classId)
         {
             this.connectionString = connStr;
@@ -36,8 +37,6 @@ namespace QLSVNhomApp.Forms
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@MALOP", classId);
                     cmd.Parameters.AddWithValue("@PUBKEY", employeeId);
-                    //cmd.Parameters.AddWithValue("@MK", encryptedPassword);
-                    cmd.Parameters.Add("@MK", SqlDbType.NVarChar, 50).Value = encryptedPassword;
                     SqlParameter errorParam = new SqlParameter("@ErrorMessage", SqlDbType.NVarChar, 200)
                     {
                         Direction = ParameterDirection.Output
@@ -55,6 +54,37 @@ namespace QLSVNhomApp.Forms
                     }
                 }
             }
+
+            dt.Columns.Add("DIEM", typeof(decimal));
+
+            // Giải mã điểm ở phía C#
+            foreach (DataRow row in dt.Rows)
+            {
+                try
+                {
+                    byte[] encryptedBytes = row["DIEM_ENCRYPTED"] as byte[];
+                    if (encryptedBytes != null)
+                    {
+                        string privateKey = EncryptionHelper.LoadPrivateKeyFromFile(employeeId);
+                        string decryptedText = EncryptionHelper.DecryptDataRSA(encryptedBytes, privateKey);
+
+                        if (decimal.TryParse(decryptedText, out decimal diem))
+                        {
+                            row["DIEM"] = diem;
+                        }
+                        else
+                        {
+                            row["DIEM"] = DBNull.Value; // hoặc gán 0
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Xử lý riêng nếu cần, nhưng không gán lỗi string vào cột DIEM_ENCRYPTED
+                    row["DIEM"] = DBNull.Value;
+                }
+            }
+            dt.Columns.Remove("DIEM_ENCRYPTED");
             dgvScores.DataSource = dt;
         }
 

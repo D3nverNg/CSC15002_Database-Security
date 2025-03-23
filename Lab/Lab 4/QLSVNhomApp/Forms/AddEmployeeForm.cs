@@ -1,9 +1,11 @@
 ﻿using Microsoft.Data.SqlClient;
 using QLSVNhomApp.Data;
+using QLSVNhomApp.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
@@ -35,8 +37,10 @@ namespace QLSVNhomApp.Forms
                 return;
             }
 
-            byte[] hashedPassword = HashPasswordSHA1(matkhau);
-            byte[] encryptedLuong = EncryptLuongRSA(luongcb, out string publicKeyXml);
+            byte[] hashedPassword = EncryptionHelper.HashPasswordSHA1(matkhau);
+            var (encryptedLuong, pubkeyXml, privateKeyXml) = EncryptionHelper.EncryptDataRSA(luongcb, hashedPassword, manv);
+            EncryptionHelper.SavePrivateKeyToFile(manv, privateKeyXml);
+            string newKey = EncryptionHelper.LoadPrivateKeyFromFile(manv);
 
             using (SqlConnection conn = new SqlConnection(DatabaseHelper.ConnectionString))
             {
@@ -47,7 +51,7 @@ namespace QLSVNhomApp.Forms
                     cmd.Parameters.AddWithValue("@HOTEN", hoten);
                     cmd.Parameters.AddWithValue("@EMAIL", email);
                     cmd.Parameters.AddWithValue("@TENDN", tendn);
-                    cmd.Parameters.AddWithValue("@PUBKEY", publicKeyXml);
+                    cmd.Parameters.AddWithValue("@PUBKEY", pubkeyXml);
 
                     // Password: VARBINARY
                     cmd.Parameters.Add("@MK", SqlDbType.VarBinary, 20).Value = hashedPassword;
@@ -77,34 +81,6 @@ namespace QLSVNhomApp.Forms
                 }
             }
         }
-
-        private byte[] HashPasswordSHA1(string input)
-        {
-            using (SHA1 sha1 = SHA1.Create())
-            {
-                return sha1.ComputeHash(Encoding.UTF8.GetBytes(input));
-            }
-        }
-
-        private byte[] EncryptLuongRSA(string luongCb, out string publicKeyXml)
-        {
-            using (var rsa = new RSACryptoServiceProvider(2048))
-            {
-                try
-                {
-                    rsa.PersistKeyInCsp = false;
-                    publicKeyXml = rsa.ToXmlString(false); // Export public key only
-
-                    byte[] dataToEncrypt = Encoding.UTF8.GetBytes(luongCb);
-                    return rsa.Encrypt(dataToEncrypt, false);
-                }
-                finally
-                {
-                    rsa.Clear();
-                }
-            }
-        }
-
 
         private void btnCancel_Click(object sender, EventArgs e)
         {

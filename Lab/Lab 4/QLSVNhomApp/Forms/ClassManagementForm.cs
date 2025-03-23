@@ -16,11 +16,12 @@ namespace QLSVNhomApp.Forms
         private string connectionString;
         private string searchPlaceholder = "Tìm kiếm lớp học theo mã lớp hoặc tên lớp";
         private string loggedInEmployeeId;
-        public ClassManagementForm(string connStr, string employeeId, string password)
+        private byte[] hashedPassword;
+        public ClassManagementForm(string connStr, string employeeId, byte[] hashedPasswordBytes)
         {
             connectionString = connStr;
             this.loggedInEmployeeId = employeeId;
-            LoggedInPassword = password;
+            hashedPassword = hashedPasswordBytes;
             InitializeComponent();
             lblGreeting.Text = "Xin chào " + LoggedInUserName;
             AdjustDataGridViewSize();
@@ -156,7 +157,7 @@ namespace QLSVNhomApp.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ProfileForm pf = new ProfileForm(connectionString, LoggedInEmployeeID, LoggedInPassword);
+            ProfileForm pf = new ProfileForm(connectionString, LoggedInEmployeeID, hashedPassword, loggedInEmployeeId);
             pf.ShowDialog();
         }
     }

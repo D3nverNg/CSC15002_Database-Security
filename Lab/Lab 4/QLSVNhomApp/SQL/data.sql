@@ -17,8 +17,8 @@ VALUES
 ('L01', N'Lớp 1', 'NV01'),
 ('L02', N'Lớp 2', 'NV02'),
 ('L03', N'Lớp 3', 'NV03'),
-('L04', N'Lớp 4', 'NV04'),
-('L05', N'Lớp 5', 'NV05');
+('L04', N'Lớp 4', 'NV10'),
+('L05', N'Lớp 5', 'NV11');
 GO
 
 -- 3. Chèn dữ liệu cho bảng HOCPHAN (học phần)
@@ -138,17 +138,17 @@ VALUES
 ('SV100', N'Ngô Hữu Linh', '2003-11-25', N'Quận 6', 'L02', 'nhlx', HASHBYTES('SHA1', '253322'));
  GO
 
--- 5. Chèn dữ liệu cho bảng BANGDIEM (bảng điểm)
-EXEC SP_INS_DIEM 'SV001','HP01','9','NV01','';
-EXEC SP_INS_DIEM 'SV001','HP02','8','NV01','';
-EXEC SP_INS_DIEM 'SV001','HP05','10','NV01','';
-EXEC SP_INS_DIEM 'SV002','HP01','9','NV04','';
-EXEC SP_INS_DIEM 'SV003','HP04','5','NV04','';
-EXEC SP_INS_DIEM 'SV003','HP03','7','NV04','';
-EXEC SP_INS_DIEM 'SV004','HP02','10','NV04','';
-EXEC SP_INS_DIEM 'SV005','HP01','5','NV01','';
-EXEC SP_INS_DIEM 'SV005','HP03','7','NV01','';
-EXEC SP_INS_DIEM 'SV006','HP05','7','NV02','';
-EXEC SP_INS_DIEM 'SV007','HP05','8','NV02','';
-EXEC SP_INS_DIEM 'SV010','HP05','8','NV01','';
-EXEC SP_INS_DIEM 'SV100','HP04','10','NV03','';
+---- 5. Chèn dữ liệu cho bảng BANGDIEM (bảng điểm)
+--EXEC SP_INS_DIEM 'SV001','HP01','9','NV01','';
+--EXEC SP_INS_DIEM 'SV001','HP02','8','NV01','';
+--EXEC SP_INS_DIEM 'SV001','HP05','10','NV01','';
+--EXEC SP_INS_DIEM 'SV002','HP01','9','NV04','';
+--EXEC SP_INS_DIEM 'SV003','HP04','5','NV04','';
+--EXEC SP_INS_DIEM 'SV003','HP03','7','NV04','';
+--EXEC SP_INS_DIEM 'SV004','HP02','10','NV04','';
+--EXEC SP_INS_DIEM 'SV005','HP01','5','NV01','';
+--EXEC SP_INS_DIEM 'SV005','HP03','7','NV01','';
+--EXEC SP_INS_DIEM 'SV006','HP05','7','NV02','';
+--EXEC SP_INS_DIEM 'SV007','HP05','8','NV02','';
+--EXEC SP_INS_DIEM 'SV010','HP05','8','NV01','';
+--EXEC SP_INS_DIEM 'SV100','HP04','10','NV03','';

@@ -6,34 +6,37 @@ using System.Text;
 using System.Windows.Forms;
 using QLSVNhomApp.Data;
 using Microsoft.Data.SqlClient;
+using System.Diagnostics;
+using QLSVNhomApp.Utils;
 
 namespace QLSVNhomApp.Forms
 {
     public partial class ProfileForm : Form
     {
+        private string manv;
         private string connectionString;
         private string tendn;
-        private string rawPassword;
+        private byte[] HashedPassword;
+        private byte[] encryptedLuong;
 
-        public ProfileForm(string connStr, string tendn, string password)
+        public ProfileForm(string connStr, string tendn, byte[] hashedPassword, string manv)
         {
             InitializeComponent();
             this.connectionString = connStr;
             this.tendn = tendn;
-            this.rawPassword = password;
+            this.HashedPassword = hashedPassword;
             LoadProfile();
+            this.manv = manv;
         }
 
         private void LoadProfile()
         {
-            byte[] hashedPassword = HashPasswordSHA1(rawPassword);
-
             using (SqlConnection conn = new SqlConnection(connectionString))
             using (SqlCommand cmd = new SqlCommand("SP_SEL_PUBLIC_ENCRYPT_NHANVIEN", conn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@TENDN", tendn);
-                cmd.Parameters.Add("@MK", SqlDbType.VarBinary, 20).Value = hashedPassword;
+                cmd.Parameters.Add("@MK", SqlDbType.VarBinary, 20).Value = HashedPassword;
 
                 conn.Open();
                 using (SqlDataReader reader = cmd.ExecuteReader())
@@ -46,6 +49,7 @@ namespace QLSVNhomApp.Forms
                         byte[] encryptedLuong = (byte[])reader["LUONG"];
                         string hexString = "0x" + BitConverter.ToString(encryptedLuong).Replace("-", "");
                         lblLuong.Text = "Lương (mã hóa): " + hexString;
+                        this.encryptedLuong = encryptedLuong;
 
                     }
                     else
@@ -57,17 +61,30 @@ namespace QLSVNhomApp.Forms
             }
         }
 
-        private byte[] HashPasswordSHA1(string input)
-        {
-            using (SHA1 sha1 = SHA1.Create())
-            {
-                return sha1.ComputeHash(Encoding.UTF8.GetBytes(input));
-            }
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonDecr_Click(object sender, EventArgs e)
+        {
+            if (encryptedLuong == null)
+            {
+                MessageBox.Show("Không có dữ liệu lương để giải mã.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            //EncryptionHelper.PrintAllPrivateKeys();
+            string newKey = EncryptionHelper.LoadPrivateKeyFromFile(manv);
+            //Debug.WriteLine(newKey);
+            string decryptedLuong = EncryptionHelper.DecryptDataRSA(encryptedLuong, newKey);
+
+            Debug.WriteLine(decryptedLuong);
+
+            if (!string.IsNullOrEmpty(decryptedLuong))
+            {
+                lblLuong.Text = "Lương (giải mã): " + decryptedLuong;
+            }
         }
 
     }

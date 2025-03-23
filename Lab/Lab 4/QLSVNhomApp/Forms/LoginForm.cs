@@ -6,6 +6,7 @@ using QLSVNhomApp.Forms;
 using System.Text;
 using System.Security.Cryptography;
 using System.Data;
+using System.Diagnostics;
 
 namespace QLSVNhomApp.Forms
 {
@@ -42,7 +43,7 @@ namespace QLSVNhomApp.Forms
                         ClassManagementForm.LoggedInUserName = reader["HOTEN"].ToString();
 
                         // Mở giao diện quản lý lớp học
-                        ClassManagementForm cmf = new ClassManagementForm(DatabaseHelper.ConnectionString, employeeId, password);
+                        ClassManagementForm cmf = new ClassManagementForm(DatabaseHelper.ConnectionString, employeeId, hashedPasswordBytes);
                         this.Hide();
                         cmf.Show();
                     }

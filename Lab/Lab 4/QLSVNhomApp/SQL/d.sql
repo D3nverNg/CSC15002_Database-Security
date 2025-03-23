@@ -7,52 +7,46 @@ IF OBJECT_ID('SP_GET_SCORES_BY_CLASS', 'P') IS NOT NULL
 GO
 
 CREATE PROCEDURE SP_GET_SCORES_BY_CLASS
-    @MALOP VARCHAR(20),  -- Mã lớp cần lấy điểm
-    @PUBKEY VARCHAR(20),  -- Khóa công khai của nhân viên để giải mã
-	@MK NVARCHAR(20),
+    @MALOP VARCHAR(20),
+    @PUBKEY VARCHAR(20),
     @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN
     SET NOCOUNT ON;
-    -- Kiểm tra nếu lớp tồn tại
+
     IF NOT EXISTS (SELECT 1 FROM LOP WHERE MALOP = @MALOP)
     BEGIN
         SET @ErrorMessage = 'Mã lớp không tồn tại!';
         RETURN;
     END
 
-    -- Kiểm tra nếu khóa bất đối xứng tồn tại
-    IF NOT EXISTS (SELECT 1 FROM sys.asymmetric_keys WHERE name = @PUBKEY)
+    IF NOT EXISTS (SELECT 1 FROM NHANVIEN WHERE MANV = @PUBKEY)
     BEGIN
-        SET @ErrorMessage = 'Khóa giải mã không hợp lệ!';
+        SET @ErrorMessage = 'Mã nhân viên không hợp lệ!';
         RETURN;
     END
 
-    -- Lấy danh sách điểm của sinh viên trong lớp và giải mã
+    -- Trả dữ liệu điểm ở dạng mã hóa (VARBINARY)
     SELECT 
-        S.MASV, 
-        S.HOTEN, 
-        B.MAHP, 
+        S.MASV,
+        S.HOTEN,
+        B.MAHP,
         H.TENHP,
-        CAST(
-       DecryptByAsymKey(AsymKey_ID(@PUBKEY), B.DIEMTHI, @MK) 
-       AS DECIMAL(18,2)) AS DIEM
+        B.DIEMTHI AS DIEM_ENCRYPTED
     FROM BANGDIEM B
     JOIN SINHVIEN S ON B.MASV = S.MASV
     JOIN HOCPHAN H ON B.MAHP = H.MAHP
     WHERE S.MALOP = @MALOP;
-END
+
+    SET @ErrorMessage = '';
+END;
 GO
 
-IF OBJECT_ID('SP_INS_DIEM', 'P') IS NOT NULL
-    DROP PROCEDURE SP_INS_DIEM;
-GO
 
 CREATE PROCEDURE SP_INS_DIEM
     @MASV VARCHAR(20),
     @MAHP VARCHAR(20),
-    @DIEMTHI DECIMAL(4,2),
-    @PUBKEY VARCHAR(20),
+    @DIEMTHI VARBINARY(MAX),
     @ErrorMessage NVARCHAR(200) OUTPUT
 AS
 BEGIN
@@ -60,17 +54,15 @@ BEGIN
         IF EXISTS (SELECT 1 FROM BANGDIEM WHERE MASV = @MASV AND MAHP = @MAHP)
         BEGIN
             UPDATE BANGDIEM
-            SET DIEMTHI = ENCRYPTBYASYMKEY(AsymKey_ID(@PUBKEY), CAST(@DIEMTHI AS VARBINARY))
+            SET DIEMTHI = @DIEMTHI
             WHERE MASV = @MASV AND MAHP = @MAHP;
-            SET @ErrorMessage = '';
         END
         ELSE
         BEGIN
             INSERT INTO BANGDIEM (MASV, MAHP, DIEMTHI)
-            VALUES (@MASV, @MAHP, ENCRYPTBYASYMKEY(AsymKey_ID(@PUBKEY), CAST(@DIEMTHI AS VARBINARY)));
-            
-            SET @ErrorMessage = '';
+            VALUES (@MASV, @MAHP, @DIEMTHI);
         END
+        SET @ErrorMessage = '';
     END TRY
     BEGIN CATCH
         SET @ErrorMessage = ERROR_MESSAGE();
@@ -89,34 +81,28 @@ CREATE PROCEDURE SP_INSERT_STUDENT
     @DIACHI NVARCHAR(200),
     @MALOP VARCHAR(20),
     @TENDN NVARCHAR(100),
-    @MATKHAU NVARCHAR(100),  -- Mật khẩu gốc, sẽ được mã hóa
+    @MATKHAU VARBINARY(MAX),  -- Mật khẩu gốc, sẽ được mã hóa
     @ErrorMessage NVARCHAR(200) OUTPUT -- Trả về lỗi nếu có
 AS
 BEGIN
     BEGIN TRY
         SET NOCOUNT ON;
 
-        -- 1️ Kiểm tra nếu tên đăng nhập đã tồn tại
         IF EXISTS (SELECT 1 FROM SINHVIEN WHERE TENDN = @TENDN)
         BEGIN
             SET @ErrorMessage = 'Tên đăng nhập đã tồn tại!';
             RETURN;
         END
 
-        -- 2️ Kiểm tra nếu lớp học tồn tại
         IF NOT EXISTS (SELECT 1 FROM LOP WHERE MALOP = @MALOP)
         BEGIN
             SET @ErrorMessage = 'Mã lớp không hợp lệ!';
             RETURN;
         END
 
-        -- 4️ Mã hóa mật khẩu bằng SHA2_256
-        DECLARE @EncryptedPassword VARBINARY(MAX);
-        SET @EncryptedPassword = HASHBYTES('SHA2_256', @MATKHAU);
-
         -- 5️ Chèn dữ liệu vào bảng SINHVIEN
         INSERT INTO SINHVIEN (MASV, HOTEN, NGAYSINH, DIACHI, MALOP, TENDN, MATKHAU)
-        VALUES (@MASV, @HOTEN, @NGAYSINH, @DIACHI, @MALOP, @TENDN, @EncryptedPassword);
+        VALUES (@MASV, @HOTEN, @NGAYSINH, @DIACHI, @MALOP, @TENDN, @MATKHAU);
 
         SET @ErrorMessage = '';
     END TRY
