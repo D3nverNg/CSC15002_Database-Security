@@ -17,8 +17,8 @@ VALUES
 ('L01', N'Lớp 1', 'NV01'),
 ('L02', N'Lớp 2', 'NV02'),
 ('L03', N'Lớp 3', 'NV03'),
-('L04', N'Lớp 4', 'NV10'),
-('L05', N'Lớp 5', 'NV11');
+('L04', N'Lớp 4', 'NV04'),
+('L05', N'Lớp 5', 'NV05');
 GO
 
 -- 3. Chèn dữ liệu cho bảng HOCPHAN (học phần)

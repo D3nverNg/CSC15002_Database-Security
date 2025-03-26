@@ -1,0 +1,63 @@
+﻿--c.sql
+USE QLSVNhom
+GO
+
+---- i. Stored dùng để thêm nhân viên
+IF EXISTS (SELECT 1 FROM sys.procedures WHERE name = 'SP_INS_PUBLIC_ENCRYPT_NHANVIEN')
+BEGIN
+    DROP PROCEDURE SP_INS_PUBLIC_ENCRYPT_NHANVIEN;
+END
+GO
+
+CREATE PROCEDURE SP_INS_PUBLIC_ENCRYPT_NHANVIEN
+    @MANV NVARCHAR(20),
+    @HOTEN NVARCHAR(100),
+    @EMAIL NVARCHAR(100),
+    @LUONGCB VARBINARY(MAX),     -- RSA encrypted, base64 string
+    @TENDN NVARCHAR(100),
+    @MK VARBINARY(MAX),          -- SHA1 hashed password (hex string)
+	@PUBKEY VARCHAR(MAX),
+    @ErrorMessage NVARCHAR(200) OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        -- Kiểm tra nếu nhân viên đã tồn tại
+        IF EXISTS (SELECT 1 FROM NHANVIEN WHERE MANV = @MANV)
+        BEGIN
+            SET @ErrorMessage = N'Mã nhân viên đã tồn tại.';
+            RETURN;
+        END
+		DECLARE @SQL NVARCHAR(MAX);
+
+        -- Thêm dữ liệu vào bảng NHANVIEN
+        INSERT INTO NHANVIEN (MANV, HOTEN, EMAIL, LUONG, TENDN, MATKHAU, PUBKEY)
+        VALUES (@MANV, @HOTEN, @EMAIL, @LUONGCB, @TENDN, @MK, @PUBKEY);
+
+        SET @ErrorMessage = N''; -- OK
+    END TRY
+    BEGIN CATCH
+        SET @ErrorMessage = ERROR_MESSAGE();
+    END CATCH
+END
+GO
+
+---- ii. Stored dùng để truy vấn dữ liệu nhân viên còn mã hóa (NHANVIEN)
+IF OBJECT_ID('SP_SEL_PUBLIC_ENCRYPT_NHANVIEN', 'P') IS NOT NULL
+    DROP PROCEDURE SP_SEL_PUBLIC_ENCRYPT_NHANVIEN;
+GO
+
+CREATE PROCEDURE SP_SEL_PUBLIC_ENCRYPT_NHANVIEN
+    @TENDN NVARCHAR(100),
+    @MK VARBINARY(MAX)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT MANV, HOTEN, EMAIL, LUONG
+    FROM NHANVIEN
+    WHERE MANV = @TENDN AND MATKHAU = @MK;
+END
+GO
+

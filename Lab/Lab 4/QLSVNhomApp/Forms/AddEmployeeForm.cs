@@ -44,7 +44,7 @@ namespace QLSVNhomApp.Forms
 
             using (SqlConnection conn = new SqlConnection(DatabaseHelper.ConnectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("SP_INS_PUBLIC_NHANVIEN", conn))
+                using (SqlCommand cmd = new SqlCommand("SP_INS_PUBLIC_ENCRYPT_NHANVIEN", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@MANV", manv);

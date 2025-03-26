@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Microsoft.Data.SqlClient;  // Sử dụng Microsoft.Data.SqlClient
 using QLSVNhomApp.Data;
 using System.Security.Cryptography;
+using QLSVNhomApp.Utils;
 
 namespace QLSVNhomApp.Forms
 {
@@ -90,7 +91,7 @@ namespace QLSVNhomApp.Forms
                         cmd.Parameters.AddWithValue("@DIACHI", diachi);
                         cmd.Parameters.AddWithValue("@TENDN", tendn);
                         cmd.Parameters.AddWithValue("@MALOP", ClassId);
-                        byte[] hashedPassword = HashPasswordSHA256(matkhau);
+                        byte[] hashedPassword = EncryptionHelper.HashPasswordSHA1(matkhau);
                         cmd.Parameters.Add("@MATKHAU", SqlDbType.VarBinary, -1).Value = hashedPassword;
 
                         // Output parameters: mã sinh viên và thông báo lỗi
@@ -127,14 +128,6 @@ namespace QLSVNhomApp.Forms
             {
                 lblError.ForeColor = Color.Red;
                 lblError.Text = "Lỗi: " + ex.Message;
-            }
-        }
-
-        private byte[] HashPasswordSHA256(string input)
-        {
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                return sha256.ComputeHash(Encoding.UTF8.GetBytes(input));
             }
         }
 
