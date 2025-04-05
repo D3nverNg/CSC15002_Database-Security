@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\quang\\OneDrive\\M\u00E1y t\u00EDnh\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 4\\QLSVNhomApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\quang\\onedrive\\m\u00E1y t\u00EDnh\\clone_db_sec\\csc15002_database-security\\lab\\lab 4\\qlsvnhomapp\\utils\\encryptionhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|solutionrelative:utils\\encryptionhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\quang\\onedrive\\m\u00E1y t\u00EDnh\\clone_db_sec\\csc15002_database-security\\lab\\lab 4\\qlsvnhomapp\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|solutionrelative:forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\quang\\onedrive\\m\u00E1y t\u00EDnh\\clone_db_sec\\csc15002_database-security\\lab\\lab 4\\qlsvnhomapp\\forms\\profileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|solutionrelative:forms\\profileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\quang\\onedrive\\m\u00E1y t\u00EDnh\\clone_db_sec\\csc15002_database-security\\lab\\lab 4\\qlsvnhomapp\\forms\\profileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|solutionrelative:forms\\profileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\quang\\onedrive\\m\u00E1y t\u00EDnh\\clone_db_sec\\csc15002_database-security\\lab\\lab 4\\qlsvnhomapp\\forms\\addemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|solutionrelative:forms\\addemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\quang\\onedrive\\m\u00E1y t\u00EDnh\\clone_db_sec\\csc15002_database-security\\lab\\lab 4\\qlsvnhomapp\\forms\\addstudentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|solutionrelative:forms\\addstudentform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\quang\\onedrive\\m\u00E1y t\u00EDnh\\clone_db_sec\\csc15002_database-security\\lab\\lab 4\\qlsvnhomapp\\forms\\inputscoreform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|solutionrelative:forms\\inputscoreform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|c:\\users\\quang\\onedrive\\m\u00E1y t\u00EDnh\\clone_db_sec\\csc15002_database-security\\lab\\lab 4\\qlsvnhomapp\\forms\\scoredetailform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82427C21-AB26-4406-BF09-C96A87E145F3}|QLSVNhomApp.csproj|solutionrelative:forms\\scoredetailform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 187,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -31,40 +43,77 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ProfileForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\quang\\OneDrive\\M\u00E1y t\u00EDnh\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 4\\QLSVNhomApp\\Forms\\ProfileForm.cs",
+              "RelativeDocumentMoniker": "Forms\\ProfileForm.cs",
+              "ToolTip": "C:\\Users\\quang\\OneDrive\\M\u00E1y t\u00EDnh\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 4\\QLSVNhomApp\\Forms\\ProfileForm.cs [Design]",
+              "RelativeToolTip": "Forms\\ProfileForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-04T04:23:34.19Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\quang\\OneDrive\\M\u00E1y t\u00EDnh\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 4\\QLSVNhomApp\\Forms\\LoginForm.cs",
+              "RelativeDocumentMoniker": "Forms\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\quang\\OneDrive\\M\u00E1y t\u00EDnh\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 4\\QLSVNhomApp\\Forms\\LoginForm.cs [Design]",
+              "RelativeToolTip": "Forms\\LoginForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-04T04:22:21.603Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ScoreDetailForm.cs",
+              "DocumentMoniker": "C:\\Users\\quang\\OneDrive\\M\u00E1y t\u00EDnh\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 4\\QLSVNhomApp\\Forms\\ScoreDetailForm.cs",
+              "RelativeDocumentMoniker": "Forms\\ScoreDetailForm.cs",
+              "ToolTip": "C:\\Users\\quang\\OneDrive\\M\u00E1y t\u00EDnh\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 4\\QLSVNhomApp\\Forms\\ScoreDetailForm.cs",
+              "RelativeToolTip": "Forms\\ScoreDetailForm.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAYwEIAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-04T04:08:58.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InputScoreForm.cs",
+              "DocumentMoniker": "C:\\Users\\quang\\OneDrive\\M\u00E1y t\u00EDnh\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 4\\QLSVNhomApp\\Forms\\InputScoreForm.cs",
+              "RelativeDocumentMoniker": "Forms\\InputScoreForm.cs",
+              "ToolTip": "C:\\Users\\quang\\OneDrive\\M\u00E1y t\u00EDnh\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 4\\QLSVNhomApp\\Forms\\InputScoreForm.cs",
+              "RelativeToolTip": "Forms\\InputScoreForm.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwBcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-04T04:08:38.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AddEmployeeForm.cs",
               "DocumentMoniker": "C:\\Users\\quang\\OneDrive\\M\u00E1y t\u00EDnh\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 4\\QLSVNhomApp\\Forms\\AddEmployeeForm.cs",
               "RelativeDocumentMoniker": "Forms\\AddEmployeeForm.cs",
               "ToolTip": "C:\\Users\\quang\\OneDrive\\M\u00E1y t\u00EDnh\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 4\\QLSVNhomApp\\Forms\\AddEmployeeForm.cs",
               "RelativeToolTip": "Forms\\AddEmployeeForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwCkAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T02:41:56.617Z",
+              "WhenOpened": "2025-04-04T02:47:36.519Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AddStudentForm.cs",
-              "DocumentMoniker": "C:\\Users\\quang\\OneDrive\\M\u00E1y t\u00EDnh\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 4\\QLSVNhomApp\\Forms\\AddStudentForm.cs",
-              "RelativeDocumentMoniker": "Forms\\AddStudentForm.cs",
-              "ToolTip": "C:\\Users\\quang\\OneDrive\\M\u00E1y t\u00EDnh\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 4\\QLSVNhomApp\\Forms\\AddStudentForm.cs",
-              "RelativeToolTip": "Forms\\AddStudentForm.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAgwF8AAAAAAAAAAAAAAA==",
+              "Title": "ProfileForm.cs",
+              "DocumentMoniker": "C:\\Users\\quang\\OneDrive\\M\u00E1y t\u00EDnh\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 4\\QLSVNhomApp\\Forms\\ProfileForm.cs",
+              "RelativeDocumentMoniker": "Forms\\ProfileForm.cs",
+              "ToolTip": "C:\\Users\\quang\\OneDrive\\M\u00E1y t\u00EDnh\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 4\\QLSVNhomApp\\Forms\\ProfileForm.cs",
+              "RelativeToolTip": "Forms\\ProfileForm.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAgwE8AAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T02:40:45.19Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EncryptionHelper.cs",
-              "DocumentMoniker": "C:\\Users\\quang\\OneDrive\\M\u00E1y t\u00EDnh\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 4\\QLSVNhomApp\\Utils\\EncryptionHelper.cs",
-              "RelativeDocumentMoniker": "Utils\\EncryptionHelper.cs",
-              "ToolTip": "C:\\Users\\quang\\OneDrive\\M\u00E1y t\u00EDnh\\clone_db_sec\\CSC15002_Database-Security\\Lab\\Lab 4\\QLSVNhomApp\\Utils\\EncryptionHelper.cs",
-              "RelativeToolTip": "Utils\\EncryptionHelper.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAAwD4AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T02:40:13.733Z",
+              "WhenOpened": "2025-04-04T02:47:32.97Z",
               "EditorCaption": ""
             }
           ]

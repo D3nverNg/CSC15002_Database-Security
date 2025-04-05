@@ -54,7 +54,3 @@ END
 CLOSE ProcCursor
 DEALLOCATE ProcCursor
 
---Kiểm tra lại
-SELECT name 
-FROM sys.objects 
-WHERE type = 'P' AND OBJECTPROPERTY(object_id, 'IsEncrypted') = 1;

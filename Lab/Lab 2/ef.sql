@@ -61,7 +61,3 @@ BEGIN
     AND QUOCGIA.TENQG = @TenQG;
 END;
 GO
-
-	-- test
-EXEC SP_SEL_ENCRYPT @TenCLB = N'SHB Đà Nẵng', @TenQG = N'Brazil';
-GO
