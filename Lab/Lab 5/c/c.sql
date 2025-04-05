@@ -50,6 +50,8 @@ WHERE db.name = 'QLBongDa';
 
 -- Backup certificate để dùng ở server khác (Detach/Restore)
 -- Tạo folder backup key cho server khác nếu muốn attach vào server khác 
+USE master;
+GO
 BACKUP CERTIFICATE TDECert
 TO FILE = 'D:\SQL_SERVER_02\MSSQL16.MSSQLSERVER02\MSSQL\BackupKey\TDECert_QLBongDa.cer'
 WITH PRIVATE KEY (
