@@ -1,0 +1,10 @@
+USE master;
+GO
+
+CREATE CERTIFICATE TDEcert
+FROM FILE = 'D:\NewBackup\SVA_TDECert_QLBongDa.cer'
+WITH PRIVATE KEY (
+	FILE = 'D:\NewBackup\SVA_TDECert_QLBongDa.pvk',
+    DECRYPTION BY PASSWORD = '22127085_22127088'
+);
+GO
