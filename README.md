@@ -1,2 +1,2 @@
 # CSC15003_Database-Security
-CSC15003 Database Security in HCMUS
+Video bài giảng + note: https://rainbow-cell-c4a.notion.site/Applied-Crypto-1d6098eb6eed805aa6f4c154cad41c01
